@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_b5fe714e-3179-47a4-b675-39f56890540a",
+      "org_id": "user_ab313f0f-2d2f-4715-bebf-a6a9503180fb",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_b5fe714e-3179-47a4-b675-39f56890540a.git",
+      "name": "Diamond",
+      "alias": "Diamond"
+    }
+  ]
+}

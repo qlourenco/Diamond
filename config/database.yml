@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: Diamond_production
-  username: Diamond
-  password: <%= ENV['DIAMOND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
