@@ -28,4 +28,4 @@ Group project :
 1. User stories
 2. Prototype (Figma)
 
-Project for Le Wagon, using Rails !
+Project for [Le Wagon](https://github.com/lewagon), using Rails !
