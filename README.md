@@ -1,6 +1,6 @@
-# Diamond !
+# Diamond ! :gem:
 ## Carry your vinyl collection with you anywhere !
-[Have a look ! :eyes:](http://www.diamond-app.fr) :gem:
+[Have a look ! :eyes:](http://www.diamond-app.fr)
 
 ## Libray App for your vinils
 
