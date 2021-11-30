@@ -6,7 +6,4 @@ class User < ApplicationRecord
 
   has_many :user_vinyls
   has_many :favorites
-
-  validates :firs_name, presence: true
-  validates :last_name, presence: true
 end
