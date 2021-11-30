@@ -4,13 +4,13 @@
 
 ## Libray App for your vinils
 
-Projet de groupe avec :
+Group project :
  - [Mathias Roux](https://github.com/MathiaSRoux)
  - [Quentin Lourenço](https://github.com/qlourenco)
  - [Clément Le Boulanger](https://github.com/ClementLeBoulanger)
  - [Térence Truong](https://github.com/Truong-Terence)
 
-### Objectifs
+### Objectives
 
 #### `Purpose`
 Target: The app is primarily aimed at vinyl lovers in the 25-35 age group.
