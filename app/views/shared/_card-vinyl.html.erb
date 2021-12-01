@@ -1,18 +1,15 @@
-<div class="banner-vinyl">
+<div class="banner-vinyl" style="background-image: url(<%= @user_vinyl.vinyl.cover_url %>)">
   <div class="d-flex flex-row-reverse p-3">
     <%= render 'shared/checkbox' %>
   </div>
 </div>
 <div class="infos bg-light mb-4">
   <div class="d-flex justify-content-between align-items-center">
-    <h2 class="text-primary">vinyl title</h2>
-    <small id="rate"><%= image_tag 'rating', class:"mr-1" %>4</small>
+    <h2 class="text-primary"><%= @user_vinyl.vinyl.title %></h2>
+    <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @user_vinyl.vinyl.stars %></small>
   </div>
   <div class="artist-year">
-    <small class="text-muted">by artist - date</small>
-  </div>
-  <div class="description">
-    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nihil, ullam non, laborum velit saepe dignissimos asperiores ad, impedit corrupti pariatur soluta quis aut. Harum nulla nihil exercitationem consequuntur nobis.</p>
+    <small class="text-muted">by <%= @user_vinyl.vinyl.artist.name %> - <%= @user_vinyl.vinyl.release_date %></small>
   </div>
   <div class="listen">
     <%= image_tag 'listen-bar.svg' %>
