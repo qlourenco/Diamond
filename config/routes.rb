@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
     resources :user_vinyls, only: [:create]
   end
-  # TODO: :
-  # Create controller
+  # TODO: : Create controller
 
   # The vinyls that are suggested for the user :
   # resources :suggestions, only: [:index]
