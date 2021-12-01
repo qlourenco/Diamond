@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.home {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513746347121-4cfd77c7dc37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 24vh;
+}
+
+.home-title {
+  font-family: $font-roboto;
+  font-size: 28px;
+  color: #F5F4EB;
+  margin-top: 78px;
+}
+
+.home-subtitle {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 19px;
+  color: #F5F4EB;
+  margin-top: 25px;
+}
+
+.home-separate {
+  font-size: 6px;
+  color: #F5F4EB;
+  i {
+    margin: 2px;
+    opacity: 0.7;
+  }
+}
