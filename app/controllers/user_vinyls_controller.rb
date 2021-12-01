@@ -4,7 +4,7 @@ class UserVinylsController < ApplicationController
   end
 
   def show
-    @user_vinyl = current_user.user_vinyls.find(params[:vinyl_id])
+    @user_vinyl = UserVinyl.find(params[:id])
   end
 
   def update
