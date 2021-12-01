@@ -1,0 +1,24 @@
+.my-form {
+  margin-top: -1.5rem;
+  white-space: nowrap;
+}
+.my-form-button {
+  position: relative;
+  top: -2px;
+  left: -4px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 6px;
+  color: white;
+  background-color: black;
+  margin-left: 0px;
+}
+.my-form-input {
+  position: relative;
+  display: inline-block;
+  border-style: none;
+  width: 100%;
+  padding: 12px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
