@@ -1,0 +1,10 @@
+<div class="my-form col-12">
+  <%= form_tag user_vinyls_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      required: true,
+      class: "my-form-input form-control col-8",
+      placeholder: "Find your bike" %>
+    <%= submit_tag "Search", class: "my-form-button btn btn-info col-4" %>
+  <% end %>
+</div>
