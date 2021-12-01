@@ -1,5 +1,12 @@
-<p>Welcome <%= @email %>!</p>
+<div class="my-divise-background">
+  <%= image_tag("diamon-v1web", width:"194") %>
+  <div class="my-devise-form d-flex flex-column justify-content-center my-5">
+    <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+    <p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+    <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+    <%# <%= render "shared/back-arrow" %>
+  </div>
+</div>
