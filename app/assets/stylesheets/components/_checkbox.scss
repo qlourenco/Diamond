@@ -1,0 +1,17 @@
+.tag-item {
+  display: inline-block;
+}
+
+.wishlist {
+  position: absolute;
+  transform: scale(0);
+}
+
+.wishlist+label {
+  cursor: pointer;
+  color: rgb(192, 189, 189);
+}
+
+.wishlist:checked+label {
+  color: $gold;
+}
