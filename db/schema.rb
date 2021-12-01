@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_12_01_115122) do
 
   # These are extensions that must be enabled in order to support this database
@@ -89,7 +90,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_115122) do
     t.bigint "genre_id", null: false
     t.bigint "artist_id", null: false
     t.string "title"
-    t.text "description"
     t.string "release_date"
     t.string "discogs_id"
     t.float "stars"
