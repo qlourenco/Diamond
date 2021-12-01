@@ -1,0 +1,20 @@
+.btn-sand {
+  // Doit hériter de class="btn btn-primary w-xx btn-sand"
+  background-color: $sand !important;
+  border-radius: 10px !important;
+  border: none;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 19px;
+  color: $mid-gold;
+}
+
+.btn-mid-gold {
+  // Doit hériter de class="btn btn-primary w-xx btn-mid-gold"
+  background-color: $mid-gold !important;
+  border-radius: 10px !important;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 19px;
+  color: $sand;
+}
