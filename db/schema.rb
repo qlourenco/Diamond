@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_113302) do
+ActiveRecord::Schema.define(version: 2021_12_01_094135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_113302) do
     t.bigint "genre_id", null: false
     t.bigint "artist_id", null: false
     t.string "title"
-    t.text "description"
     t.date "release_date"
     t.string "discogs_id"
     t.float "stars"
