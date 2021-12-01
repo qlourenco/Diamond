@@ -1,2 +1,12 @@
-<h1>Diamond</h1>
-<p>Create your collection</p>
+<div class="container-fluid home">
+  <div class="home-logo d-flex align-items-center justify-content-center">
+    <%= image_tag("diamond-v1web.png", width: 194) %>
+  </div>
+  <h2 class="home-title">Here’s how Diamond works</h2>
+  <p class="home-subtitle w-100 text-center">Research or scan a vinyl to get infos</p>
+  <div class="home-separate w-100 text-center"><i class="fas fa-square"></i><i class="fas fa-square"></i><i class="fas fa-square"></i></div>
+  <div class="home-buttons w-100 text-center">
+    <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary w-75 btn-sand mt-5" %>
+    <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary w-75 btn-mid-gold mt-4" %>
+  </div>
+</div>

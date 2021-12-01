@@ -3,9 +3,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Spectral&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 // Define fonts for body and headers
 $body-font: "Karla", "sans-serif";
 $headers-font: "Spectral", "serif";
+$font-roboto : 'Roboto', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
