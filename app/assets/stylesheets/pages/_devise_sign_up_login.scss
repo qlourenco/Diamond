@@ -1,0 +1,32 @@
+.my-divise-background {
+  position: relative;
+  background-color: $main-green;
+  padding: 5rem;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  color: #F5F4EB;
+}
+
+.form-input {
+  text-align: center;
+  color: #C4C4C4;
+  border-radius: 10px;
+  background-color: transparent;
+  &:focus {
+    background-color: transparent;
+    border: solid $primary 1px;
+    box-shadow: 2px 2px 3px;
+  }
+}
+
+.my-devise-form {
+  a {
+    text-decoration: none;
+    color: #F5F4EB;
+  }
+  input {
+    text-decoration: none;
+    color: #d4d3cb;
+  }
+}
