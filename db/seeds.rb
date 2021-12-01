@@ -45,7 +45,7 @@ puts "[VINYLS] ..."
 # ROCK
 # 1
 file_black_holes_and_revelation = "https://img.discogs.com/BMWu5yQg4d4QZowrLALt2wtwTyU=/fit-in/600x524/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-725292-1203342175.jpeg.jpg"
-black_holes_and_revelation = Vinyl.create(title: "BLACK HOLES & REVELATIONS", release_date: "2006", genre: rock, artist: muse, cover_url: file_black_holes_and_revelation)
+black_holes_and_revelation = Vinyl.create(title: "Black Holes & Revelations", release_date: "2006", genre: rock, artist: muse, cover_url: file_black_holes_and_revelation)
 
 # 2
 file_demon_days = "https://img.discogs.com/yW9zh7xos1zPJds9Vu_zI0TfCoI=/fit-in/394x400/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-474703-1457294216-3965.jpeg.jpg"
