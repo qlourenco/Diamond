@@ -5,6 +5,12 @@
   min-height: 100vh;
   padding-top: 24vh;
   position: relative;
+  a {
+
+      display: flex;
+  align-items: center;
+  justify-content: center;
+  }
 }
 
 .home-title {
@@ -12,6 +18,13 @@
   font-size: 28px;
   color: #F5F4EB;
   margin-top: 78px;
+}
+
+.home-user-title {
+  font-family: $font-roboto;
+  font-size: 28px;
+  color: #F5F4EB;
+  margin-top: 30px;
 }
 
 .home-subtitle {
@@ -35,8 +48,12 @@
   position: absolute;
   top: 16px;
   right: 16px;
+  list-style: none;
 }
 
+.home-form {
+  margin-top: 50px !important;
+}
 .btn-search-home {
   border-radius: 0 !important;
   border-top-right-radius: 10px !important;
@@ -52,7 +69,7 @@
   color: $main-green !important;
 }
 
-.home-form {
+.home-input {
   border-radius: 0 !important;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
@@ -61,4 +78,16 @@
   &::placeholder {
     color: $sand !important;
   }
+}
+
+.btn-scan {
+  font-size: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50% !important;
+  background-color: $main-green !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }
