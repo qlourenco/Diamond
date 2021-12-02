@@ -16,7 +16,5 @@
     <%= image_tag 'listen-bar.svg' %>
   </div>
 </div>
-<%= link_to "ADD", vinyl_user_vinyls_path(@vinyl) %>
-<%= render 'shared/btn-collection' %>
+<%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "text-decoration: none; border-radius: 10px; height: 50px;" %>
 <%= render 'shared/back-arrow' %>
-<%# <%= render 'shared/card-vinyl'%>
