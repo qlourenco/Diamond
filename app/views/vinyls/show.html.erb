@@ -1,5 +1,5 @@
-<% @vinyl = Vinyl.find(params[:id]) %>
-<div class="banner-vinyl" style="background-image: url(<%= @vinyl.cover_url %>)">
+<%# <% @vinyl = Vinyl.find(params[:id])  %>
+<div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>'); background-size: cover;">
   <div class="d-flex flex-row-reverse p-3">
     <%= render 'shared/checkbox' %>
   </div>
@@ -19,4 +19,4 @@
 <%= link_to "ADD", vinyl_user_vinyls_path(@vinyl) %>
 <%= render 'shared/btn-collection' %>
 <%= render 'shared/back-arrow' %>
-<%# <%= render 'shared/card-vinyl' %>
+<%# <%= render 'shared/card-vinyl'%>
