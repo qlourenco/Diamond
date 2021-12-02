@@ -18,5 +18,13 @@
 
     <%= yield %>
 
+    <% if back_arrow? %>
+      <%= render 'shared/back-arrow' %>
+    <% elsif white_bottom_navbar? %>
+      <%= render 'shared/white-bottom-navbar' %>
+    <% elsif dark_bottom_navbar? %>
+      <%= render 'shared/dark-bottom-navbar' %>
+    <% end %>
+
   </body>
 </html>
