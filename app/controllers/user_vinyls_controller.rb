@@ -19,9 +19,10 @@ class UserVinylsController < ApplicationController
     @user_vinyl.update(user_vinyl_params)
   end
 
-  def delete
+  def destroy
     @user_vinyl = UserVinyl.find(params[:id])
     @user_vinyl.destroy
+    redirect_to user_vinyls_path
   end
 
   private
