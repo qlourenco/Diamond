@@ -4,10 +4,10 @@ class UserVinylsController < ApplicationController
   end
 
   def create
-    @vinyl = Vinyl.find(params[:id])
+    @vinyl = Vinyl.find(params[:vinyl_id])
     @user = current_user
     @user_vinyl = UserVinyl.create(vinyl: @vinyl, user: @user)
-    redirect_to user_vinyls_path(@user_vinyl)
+    redirect_to user_vinyl_path(@user_vinyl)
   end
 
   def show
