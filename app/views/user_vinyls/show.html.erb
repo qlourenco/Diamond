@@ -1,1 +1,22 @@
-<%= render 'shared/card-vinyl' %>
+<div class="banner-vinyl" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>'); background-size:cover;">
+  <div class="d-flex flex-row-reverse p-3">
+    <%= render 'shared/checkbox' %>
+  </div>
+</div>
+<div class="infos bg-light mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="text-primary"><%= @user_vinyl.vinyl.title %></h2>
+    <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @user_vinyl.vinyl.stars %></small>
+  </div>
+  <div class="artist-year">
+    <small class="text-muted">by <%= @user_vinyl.vinyl.artist.name %> - <%= @user_vinyl.vinyl.release_date %></small>
+  </div>
+  <div class="tracks-index mt-3">
+      <ul class="pl-0 bg-light">
+        <% @user_vinyl.vinyl.tracks.each do |track| %>
+          <li><%= track.position %>. <%= track.title %></li>
+        <% end %>
+      </ul>
+  </div>
+</div>
+<%= render 'shared/btn-collection' %>

@@ -9,10 +9,7 @@
     <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @user_vinyl.vinyl.stars %></small>
   </div>
   <div class="artist-year">
-    <small class="text-muted">by <%= @user_vinyl.vinyl.artist.name %> - <%= @user_vinyl.vinyl.release_date %></small>
-  </div>
-  <div class="listen">
-    <%= image_tag 'listen-bar.svg' %>
+    <small class="text-muted">by <%= @user_vinyl.vinyl.artist.name %>-<%= @user_vinyl.vinyl.release_date %></small>
   </div>
 </div>
 <%= render 'shared/btn-collection' %>

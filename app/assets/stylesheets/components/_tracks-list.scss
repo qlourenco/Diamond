@@ -1,0 +1,8 @@
+li{
+  list-style: none;
+  color: $main-green;
+
+  &:not(:last-child) {
+   margin-bottom: 3px;
+  }
+}
