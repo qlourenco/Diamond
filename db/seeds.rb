@@ -223,5 +223,9 @@ UserVinyl.create(user: emile, vinyl: l_autre)
 
 puts "[VINYL TAGS] ..."
 # TODO: Add tags on UserVinyl
+TAGS.each do |tag|
+  Tag.create(title: tag)
+end
+VinylTag.create(tag: Tag.first, user_vinyl: UserVinyl.first)
 
 puts "Seeds created !"
