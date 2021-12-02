@@ -1,1 +1,22 @@
-<%= render 'shared/card-vinyl' %>
+<%# <% @vinyl = Vinyl.find(params[:id])  %>
+<div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>'); background-size: cover;">
+  <div class="d-flex flex-row-reverse p-3">
+    <%= render 'shared/checkbox' %>
+  </div>
+</div>
+<div class="infos bg-light mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="text-primary"><%= @vinyl.title %></h2>
+    <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @vinyl.stars %></small>
+  </div>
+  <div class="artist-year">
+    <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
+  </div>
+  <div class="listen">
+    <%= image_tag 'listen-bar.svg' %>
+  </div>
+</div>
+<%= link_to "ADD", vinyl_user_vinyls_path(@vinyl) %>
+<%= render 'shared/btn-collection' %>
+<%= render 'shared/back-arrow' %>
+<%# <%= render 'shared/card-vinyl'%>

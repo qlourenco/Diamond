@@ -181,6 +181,24 @@ search_track(bagatelle)
 search_track(endless_smile)
 
 
+def search_stars(vinyl)
+  auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
+  search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
+  master_url = search.results[0]['master_url']
+  search_serialized = URI.open(master_url).read
+  master = JSON.parse(search_serialized)
+  main_release_url = master['main_release_url']
+  main_release_serialized = URI.open(main_release_url).read
+  main_release = JSON.parse(main_release_serialized)
+  vinyl.stars = main_release['community']['rating']['average']
+  vinyl.save
+end
+
+search_stars(nevermind)
+search_stars(bagatelle)
+search_stars(endless_smile)
+
+
 puts "[USER VINYLS] ..."
 UserVinyl.create(user: emile, vinyl: black_holes_and_revelation)
 UserVinyl.create(user: emile, vinyl: demon_days)

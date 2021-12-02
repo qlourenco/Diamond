@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # The vinyls that the user own in his collection:
   resources :user_vinyls, only: [:index, :show, :update]
-  # TODO: : Create controller
+  # TODO: :
   # -- SHOULD HAVE --
   # :users
   # :listen
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   # The vinyls that the user has put in his wish list:
   resources :favorites, only: [:index]
-  # TODO: : Create controller
 
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create]
     resources :user_vinyls, only: [:create]
   end
-  # TODO: : Create controller
+
 
   # The vinyls that are suggested for the user :
   # resources :suggestions, only: [:index]
