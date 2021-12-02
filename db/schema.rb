@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_115122) do
+ActiveRecord::Schema.define(version: 2021_12_01_164044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_115122) do
     t.string "title"
     t.string "release_date"
     t.string "discogs_id"
-    t.float "stars"
+    t.string "stars"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover_url"
