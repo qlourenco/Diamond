@@ -5,14 +5,18 @@
   <div class="home-logo d-flex align-items-center justify-content-center">
     <%= image_tag("diamond-v1web.png", width: 194) %>
   </div>
-  <h2 class="home-title text-center">Create your collection</h2>
-    <%= form_tag vinyls_path, method: "GET", class:"mt-5 home-form w-100 d-flex justify-content-center" do %>
-        <%= text_field_tag :query,
-            params[:query],
-            required: false,
-            class: "form-control home-form",
-            placeholder: "Find your Album Vinyl"
-        %>
-      <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
-    <% end %>
+  <h2 class="home-user-title text-center mb-5">Create your collection</h2>
+  <%= form_tag vinyls_path, method: "GET", class:"home-form w-100 d-flex justify-content-center" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          required: false,
+          class: "form-control home-input",
+          placeholder: "Find your Album Vinyl"
+      %>
+    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
+  <% end %>
+  <h2 class="home-user-title text-center">Search or scan</h2>
+  <div class="w-100 d-flex justify-content-center"><%= link_to icon('fas', 'camera'),  scan_vinyls_path, class: "btn-scan" %></span>
+
+    <%= render '/shared/white-bottom-navbar' %>
 </div>
