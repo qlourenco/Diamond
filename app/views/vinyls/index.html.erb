@@ -1,2 +1,30 @@
-<h1>Vinyls#index</h1>
-<p>Find me in app/views/vinyls/index.html.erb</p>
+<%= render 'shared/header_search' %>
+
+<div class="card-vinyl">
+  <div class="search-bar">
+    <%= render 'shared/search_bar' %>
+  </div>
+
+  <div class="m-3 content-search">
+    <% @vinyls.each do |vinyl| %>
+      <div class="card-search  py-4 d-flex">
+        <%= link_to vinyl_path(vinyl) do %>
+          <div class="container-img ">
+            <img class="photo-sizing" src="<%= vinyl.cover_url %>">
+          </div>
+          <div class="container-infos w-100 px-3 py-2 d-flex flex-column justify-content-between">
+            <div>
+              <h6 class="card-text title-sizing text-white"><%= vinyl.title %></h6>
+              <p class="card-text text-sizing text-white"><%= vinyl.artist.name %></p>
+            </div>
+            <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= vinyl.genre.name %></small></p>
+          </div>
+          <div class="h-75  p-3 link-card justify-content-between align-items-center d-flex flex-column">
+            <%= render 'shared/checkbox' %>
+            <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(vinyl) %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

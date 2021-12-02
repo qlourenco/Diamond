@@ -1,0 +1,27 @@
+.header-search {
+  height: 132px;
+}
+
+.header-search-h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-search {
+  min-height: calc(100vh - 132px);
+}
+
+.card-search a {
+  display: flex !important;
+}
+
+.card-search {
+  position: relative;
+  border-bottom: solid 2px #364f50;
+}
+
+.link-card {
+  position: absolute;
+  right: 0 !important;
+}
