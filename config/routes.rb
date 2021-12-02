@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  authenticated :user do
+    root to: 'pages#home_user', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    root to: 'pages#home', as: :unauthenticated_root
+  end
 
   # The vinyls that the user own in his collection:
   resources :user_vinyls, only: [:index, :show, :update, :destroy]
