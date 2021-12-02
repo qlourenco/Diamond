@@ -1,6 +1,7 @@
 class VinylsController < ApplicationController
   def index
-    # @vinyls = Vinyl.all
+    @query = params[:query_search]
+    @vinyls = Vinyl.find_from_discogs(@query)
   end
 
   def show
