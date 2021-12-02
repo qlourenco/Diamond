@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  authenticated :user do
+    root to: 'pages#home_user', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    root to: 'pages#home', as: :unauthenticated_root
+  end
 
   # The vinyls that the user own in his collection:
-  resources :user_vinyls, only: [:index, :show, :update]
+  resources :user_vinyls, only: [:index, :show, :update, :destroy]
   # TODO: :
   # -- SHOULD HAVE --
   # :users
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   # :index from other users
 
   # The vinyls that the user has put in his wish list:
-  resources :favorites, only: [:index]
+  resources :favorites, only: [:index, :show]
 
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do

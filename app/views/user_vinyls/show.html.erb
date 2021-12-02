@@ -1,6 +1,5 @@
-<div class="banner-vinyl" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>'); background-size:cover;">
+<div class="banner-vinyl" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
   <div class="d-flex flex-row-reverse p-3">
-    <%= render 'shared/checkbox' %>
   </div>
 </div>
 <div class="infos bg-light mb-4">
@@ -19,4 +18,7 @@
       </ul>
   </div>
 </div>
-<%= render 'shared/btn-collection' %>
+<%# <div class="d-flex w-100 fixed-bottom p-3">
+  <% img = image_tag 'back-arrow.svg' %>
+  <%# <%= link_to img, user_vinyls_path %>
+<%# </div> %>

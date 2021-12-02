@@ -1,6 +1,6 @@
 <div class="dark-navbar d-flex w-100 justify-content-around p-3" style="position:sticky; bottom:0;">
-  <% search = image_tag 'search-white' %>
+  <% search = image_tag 'search-white.svg' %>
   <% collection = image_tag 'collection-white.svg' %>
-  <%= link_to search %>
-  <%= link_to collection %>
+  <%= link_to search, authenticated_root_path  %>
+  <%= link_to collection, user_vinyls_path %>
 </div>

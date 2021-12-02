@@ -2,10 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    if current_user
-      render 'home_user'
-    else
-      render "home"
-    end
+    render 'home'
+  end
+
+  def home_user
+    render 'home_user'
   end
 end
