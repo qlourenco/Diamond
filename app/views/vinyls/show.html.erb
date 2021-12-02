@@ -1,19 +1,29 @@
-<div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>'); background-size: cover;">
-  <div class="d-flex flex-row-reverse p-3">
-    <%= render 'shared/checkbox' %>
+<div style="height: 100vh">
+  <div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>');">
+    <div class="d-flex flex-row-reverse py-3 px-2">
+      <%= render 'shared/checkbox' %>
+    </div>
   </div>
+  <div class="infos bg-light mb-4" style="height: 35vh">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="text-primary"><%= @vinyl.title %></h2>
+      <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @vinyl.stars %></small>
+    </div>
+    <div class="artist-year">
+      <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
+    </div>
+    <div class="listen">
+      <%= image_tag 'listen-bar.svg' %>
+    </div>
+      <div class="tracks-index mt-3" style="height: 25vh; overflow: scroll">
+        <ul class="pl-0 bg-light">
+          <%# <% @user_vinyl.vinyl.tracks.each do |track| %>
+            <%# <li><%= track.position . <%= track.title </li> %>
+          <%# <% end %>
+        </ul>
+      </div>
+    </div>
+    <%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px;" %>
+  </div>
+  <%= render 'shared/back-arrow' %>
 </div>
-<div class="infos bg-light mb-4">
-  <div class="d-flex justify-content-between align-items-center">
-    <h2 class="text-primary"><%= @vinyl.title %></h2>
-    <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @vinyl.stars %></small>
-  </div>
-  <div class="artist-year">
-    <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
-  </div>
-  <div class="listen">
-    <%= image_tag 'listen-bar.svg' %>
-  </div>
-</div>
-<%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "text-decoration: none; border-radius: 10px; height: 50px;" %>
-<%= render 'shared/back-arrow' %>
