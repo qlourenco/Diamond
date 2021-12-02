@@ -6,9 +6,32 @@
 
 .card-vinyl{
   background-color: $main-green;
+  a{
+    text-decoration: none;
+  }
 }
 
 .search-bar{
   display: flex;
   align-items: center;
+}
+
+.photo-sizing{
+  height: 128px;
+  width: 128px;
+}
+
+.genre-color{
+  color: $gold;
+}
+.title-sizing{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-sizing{
+  font-size: 13px;
 }
