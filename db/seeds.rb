@@ -190,12 +190,14 @@ def search_stars(vinyl)
   main_release_url = master['main_release_url']
   main_release_serialized = URI.open(main_release_url).read
   main_release = JSON.parse(main_release_serialized)
-  main_release['community']['rating']['average']
+  vinyl.stars = main_release['community']['rating']['average']
+  vinyl.save
 end
 
-Vinyl.all.each do |vinyl|
-  vinyl.stars = search_stars(vinyl)
-end
+search_stars(nevermind)
+search_stars(bagatelle)
+search_stars(endless_smile)
+
 
 puts "[USER VINYLS] ..."
 UserVinyl.create(user: emile, vinyl: black_holes_and_revelation)
