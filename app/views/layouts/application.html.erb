@@ -18,9 +18,13 @@
 
     <%= yield %>
 
-    <% if back_arrow? %>
-      <%= render 'shared/back-arrow' %>
-    <% elsif white_bottom_navbar? %>
+    <%# <% if back_arrow_devise? && !current_page?(:unauthenticated_root)%>
+      <%# <%= render 'shared/back-arrow-devise' %>
+    <%# <% end %>
+    <%# <% if back_arrow? && %>
+      <%# <%= render 'shared/back-arrow' %>
+    <%# <% end %>
+    <% if white_bottom_navbar? %>
       <%= render 'shared/white-bottom-navbar' %>
     <% elsif dark_bottom_navbar? %>
       <%= render 'shared/dark-bottom-navbar' %>
