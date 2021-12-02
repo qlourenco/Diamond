@@ -1,7 +1,11 @@
 .banner-vinyl{
   height: 300px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.404));
   z-index: 100;
+  background-size: cover;
+  position:sticky;
+  position: -webkit-sticky;
+  top: 0;
 }
 
 .infos{
