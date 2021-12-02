@@ -10,7 +10,7 @@
 
   <div class="m-4">
     <% @user_vinyls.each do |user_vinyl| %>
-      <%= link_to user_vinyl_path(:vinyl_id) do %>
+      <%= link_to user_vinyl_path(user_vinyl) do %>
       <div class="row mb-3 g-0">
         <div class="col-4 d-flex align-items-center">
           <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
