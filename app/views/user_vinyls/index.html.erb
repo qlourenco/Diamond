@@ -10,18 +10,21 @@
 
   <div class="m-4">
     <% @user_vinyls.each do |user_vinyl| %>
-      <%= link_to user_vinyl_path(user_vinyl) do %>
-      <div class="row mb-3 g-0">
-        <div class="col-4 d-flex align-items-center">
-          <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
-        </div>
-        <div class="col-8 pr-0">
-          <div class="card-body">
-            <h6 class="card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
-            <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
-            <div class="d-flex justify-content-between">
-              <p class="card-text genre-color"><small><%= user_vinyl.vinyl.genre.name %></small></p>
-            </div>
+      <div class="row">
+        <div class="d-flex mb-3 g-0">
+          <%= link_to user_vinyl_path(user_vinyl) do %>
+          <div class="col-4 d-flex align-items-center">
+              <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
+          </div>
+          <div class="col-8 px-0">
+              <div class="card-body pl-0">
+                <h6 class="my-h6 card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
+                <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text genre-color"><small><%= user_vinyl.vinyl.genre.name %></small></p>
+                  <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, class:"my-trash text-white" %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
