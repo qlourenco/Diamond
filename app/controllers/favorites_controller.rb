@@ -15,8 +15,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find(params[:id])
-    @vinyl = @favorite.vinyl
     @favorite.destroy
-    redirect_to vinyl_path(@vinyl)
+    redirect_to favorites_path
   end
 end
