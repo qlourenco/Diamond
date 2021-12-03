@@ -1,7 +1,11 @@
 <div style="height: 100vh">
   <div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>');">
-    <div class="d-flex flex-row-reverse py-3 px-2">
-      <%= render 'shared/checkbox' %>
+    <div class="my-diamond-vinyl-show d-flex flex-row-reverse py-3 px-2">
+      <% if @favorite %>
+        <%= render 'shared/delete-favorite-link' %>
+      <% else %>
+        <%= render 'shared/add-favorite-link' %>
+      <% end %>
     </div>
   </div>
   <div class="infos bg-light mb-4">
@@ -24,7 +28,14 @@
         <%= image_tag 'vinyl.png' %>
   </div>
 
-  <%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px; margin-top: 66px;" %>
+  <div>
+    <% if @already_in_collec %>
+      <%= link_to "Already in collection !", _back_url, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px; margin-top: 66px;" %>
+    <% else %>
+      <%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px; margin-top: 66px;" %>
+    <% end %>
+  </div>
+
 
   <%= render 'shared/back-arrow' %>
 </div>

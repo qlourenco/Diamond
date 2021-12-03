@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # :index from other users
 
   # The vinyls that the user has put in his wish list:
-  resources :favorites, only: [:index, :create, :show, :destroy]
+  resources :favorites, only: [:index, :show, :destroy]
 
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do

@@ -5,9 +5,8 @@ class FavoritesController < ApplicationController
 
   def create
     @vinyl = Vinyl.find(params[:vinyl_id])
-    @user = current_user
-    @favorite = Favorite.create(vinyl: @vinyl, user: @user)
-    redirect_to favorites_path(@favorite)
+    @favorite = Favorite.create(vinyl: @vinyl, user: current_user)
+    redirect_to vinyl_path(@vinyl)
   end
 
   def show
