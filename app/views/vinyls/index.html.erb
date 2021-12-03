@@ -22,7 +22,7 @@
           </div>
           <div class="h-75  p-3 link-card justify-content-between align-items-center d-flex flex-column">
             <%= render 'shared/checkbox' %>
-            <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(vinyl) %>
+            <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(vinyl), method: :post %>
           </div>
         <% end %>
       </div>
