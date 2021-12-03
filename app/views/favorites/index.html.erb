@@ -30,6 +30,7 @@
           <div class="card-body">
             <h6 class="card-text title-sizing text-white"><%= favorite.vinyl.title %></h6>
             <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
+            <%= link_to icon('fas', 'trash-alt'),  favorite_path(favorite), method: :delete, class:"my-trash text-white" %>
             <div class="d-flex justify-content-between">
               <p class="card-text genre-color"><small><%= favorite.vinyl.genre.name %></small></p>
             </div>
