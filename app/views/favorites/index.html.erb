@@ -35,7 +35,7 @@
                 <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
                 <div class="d-flex justify-content-between">
                   <p class="card-text genre-color"><small><%= favorite.vinyl.genre.name %></small></p>
-                  <%= link_to icon('fas', 'trash-alt'),  favorite_path(favorite), method: :delete, class:"my-trash text-white" %>
+                  <%= link_to icon('fas', 'trash-alt'), favorite_path(favorite), method: :delete, data: { confirm: "Are you sure?" }, class:"my-trash text-white" %>
                 </div>
               </div>
           </div>
