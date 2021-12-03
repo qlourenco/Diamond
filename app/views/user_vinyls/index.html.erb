@@ -7,7 +7,7 @@
     <%= render 'shared/search_bar' %>
   </div>
 
-  <div class="m-3 content-search">
+  <div class="m-3 content-search content-padding">
     <% @user_vinyls.each do |user_vinyl| %>
       <div class="d-flex card-search py-4 g-0">
         <%= link_to user_vinyl_path(user_vinyl) do %>
