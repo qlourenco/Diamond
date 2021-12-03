@@ -1,8 +1,9 @@
 .banner-vinyl{
-  height: 300px;
+  height: 380px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.404));
   z-index: 100;
   background-size: cover;
+  background-color: $main-green;
   position:sticky;
   position: -webkit-sticky;
   top: 0;

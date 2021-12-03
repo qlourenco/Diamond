@@ -2,15 +2,15 @@ require 'open-uri'
 require 'json'
 
 puts "/!\\ DESTROYING EVERYTHING /!\\ "
-# VinylTag.destroy_all
-# UserVinyl.destroy_all
-# Track.destroy_all
-# Tag.destroy_all
-# Favorite.destroy_all
-# Vinyl.destroy_all
-# Artist.destroy_all
-# Genre.destroy_all
-# User.destroy_all
+VinylTag.destroy_all
+UserVinyl.destroy_all
+Track.destroy_all
+Tag.destroy_all
+Favorite.destroy_all
+Vinyl.destroy_all
+Artist.destroy_all
+Genre.destroy_all
+User.destroy_all
 
 puts "Creating seeds ..."
 
@@ -173,6 +173,8 @@ def search_track(vinyl)
   main_release['tracklist'].each do |track|
     Track.create(title: track['title'], position: track['position'], milliseconds: track['duration'], vinyl_id: vinyl.id)
   end
+  vinyl.stars = main_release['community']['rating']['average']
+  vinyl.save
 end
 
 
@@ -181,22 +183,20 @@ search_track(bagatelle)
 search_track(endless_smile)
 
 
-def search_stars(vinyl)
-  auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
-  search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
-  master_url = search.results[0]['master_url']
-  search_serialized = URI.open(master_url).read
-  master = JSON.parse(search_serialized)
-  main_release_url = master['main_release_url']
-  main_release_serialized = URI.open(main_release_url).read
-  main_release = JSON.parse(main_release_serialized)
-  vinyl.stars = main_release['community']['rating']['average']
-  vinyl.save
-end
+# def search_stars(vinyl)
+#   auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
+#   search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
+#   master_url = search.results[0]['master_url']
+#   search_serialized = URI.open(master_url).read
+#   master = JSON.parse(search_serialized)
+#   main_release_url = master['main_release_url']
+#   main_release_serialized = URI.open(main_release_url).read
+#   main_release = JSON.parse(main_release_serialized)
+# end
 
-search_stars(nevermind)
-search_stars(bagatelle)
-search_stars(endless_smile)
+# search_stars(nevermind)
+# search_stars(bagatelle)
+# search_stars(endless_smile)
 
 
 puts "[USER VINYLS] ..."
