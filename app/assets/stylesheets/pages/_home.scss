@@ -84,6 +84,10 @@
   &::placeholder {
     color: $sand !important;
   }
+  &:focus {
+    background-color: $sand !important;
+    color: $main-green;
+  }
 }
 
 .btn-scan {
