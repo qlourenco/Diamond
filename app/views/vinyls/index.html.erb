@@ -11,7 +11,7 @@
         <%= link_to vinyl_path(vinyl) do %>
           <div class="container-img ">
             <img class="photo-sizing position-relative" src="<%= vinyl.cover_url %>">
-            <% if @already_in_collec %>
+            <% if @already_in_collecs[index] %>
               <%= render 'shared/bookmark-green' %>
             <% else %>
               <%= render 'shared/bookmark-red' %>
