@@ -11,8 +11,8 @@ class UserVinylsController < ApplicationController
   end
 
   def show
-    @vinyl_tags = VinylTag.all
     @user_vinyl = UserVinyl.find(params[:id])
+    @vinyl_tags = @user_vinyl.vinyl_tags.all
   end
 
   def update

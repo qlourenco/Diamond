@@ -1,34 +1,31 @@
 <%= render 'shared/header_collection' %>
 
-<div class="music-kind-view">
-</div>
+<%= image_tag ("graph_holder.jpg"), class:"music-kind-view" %>
 
 <div class="card-vinyl">
   <div class="search-bar">
     <%= render 'shared/search_bar' %>
   </div>
 
-  <div class="m-4">
+  <div class="m-3 content-search content-padding">
     <% @user_vinyls.each do |user_vinyl| %>
-      <div class="row">
-        <div class="d-flex mb-3 g-0">
-          <%= link_to user_vinyl_path(user_vinyl) do %>
-          <div class="col-4 d-flex align-items-center">
+      <div class="d-flex card-search py-4 g-0">
+        <%= link_to user_vinyl_path(user_vinyl) do %>
+          <div class="container-img">
               <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
           </div>
-          <div class="col-8 px-0">
-              <div class="card-body pl-0">
-                <h6 class="my-h6 card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
-                <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
-                <div class="d-flex justify-content-between">
-                  <p class="card-text genre-color"><small><%= user_vinyl.vinyl.genre.name %></small></p>
-                  <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, class:"my-trash text-white" %>
-                </div>
-              </div>
+          <div class="container-infos w-100 px-3 py-2 d-flex flex-column justify-content-between">
+            <div>
+              <h6 class="card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
+              <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
+            </div>
+              <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= user_vinyl.vinyl.genre.name %></small></p>
+            </div>
+            <div class="h-75 p-3 link-card justify-content-center align-items-center d-flex flex-column">
+              <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, class:"my-trash text-white" %>
           </div>
-        </div>
+        <% end %>
       </div>
-      <% end %>
     <% end %>
   </div>
 
