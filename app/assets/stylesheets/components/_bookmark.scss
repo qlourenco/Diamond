@@ -1,5 +1,5 @@
 .bookmark-red{
-  color: red;
+  color:$red;
   text-shadow: 1px 6px 4px rgba(0, 0, 0, 0.48);
   position: absolute;
   top: 20px;
@@ -7,7 +7,7 @@
 }
 
 .bookmark-green{
-  color: green;
+  color: $green;
   text-shadow: 1px 6px 4px rgba(0, 0, 0, 0.48);
   position: absolute;
   top: 20px;
