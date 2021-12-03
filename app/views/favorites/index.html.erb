@@ -21,22 +21,27 @@
   </div>
 
   <div class="m-4">
-    <% @favorites.each do |favorite| %>
-      <div class="row mb-3 g-0">
-        <div class="col-4 d-flex align-items-center">
-          <img class="photo-sizing" src="<%= favorite.vinyl.cover_url %>">
-        </div>
-        <div class="col-8 pr-0">
-          <div class="card-body">
-            <h6 class="card-text title-sizing text-white"><%= favorite.vinyl.title %></h6>
-            <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
-            <%= link_to icon('fas', 'trash-alt'),  favorite_path(favorite), method: :delete, class:"my-trash text-white" %>
-            <div class="d-flex justify-content-between">
-              <p class="card-text genre-color"><small><%= favorite.vinyl.genre.name %></small></p>
-            </div>
+    <% @favorites.reverse_each do |favorite| %>
+      <div class="row">
+        <div class="d-flex mb-3 g-0">
+          <%= link_to favorite_path(favorite) do %>
+          <div class="col-4 d-flex align-items-center">
+              <img class="photo-sizing" src="<%= favorite.vinyl.cover_url %>">
+          </div>
+          <div class="col-8 px-0">
+              <div class="card-body pl-0">
+                <h6 class="my-h6 card-text title-sizing text-white"><%= favorite.vinyl.title %></h6>
+                <%= image_tag 'fav-diamond', style:"height:20px;" %>
+                <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text genre-color"><small><%= favorite.vinyl.genre.name %></small></p>
+                  <%= link_to icon('fas', 'trash-alt'),  favorite_path(favorite), method: :delete, class:"my-trash text-white" %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 
