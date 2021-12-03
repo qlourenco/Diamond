@@ -6,5 +6,6 @@ class VinylsController < ApplicationController
 
   def show
     @vinyl = Vinyl.find(params[:id])
+    @favorite = Favorite.find_by(user: current_user, vinyl: @vinyl)
   end
 end

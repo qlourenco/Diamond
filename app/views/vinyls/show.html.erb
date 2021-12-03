@@ -1,7 +1,11 @@
 <div style="height: 100vh">
   <div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>');">
     <div class="d-flex flex-row-reverse py-3 px-2">
-      <%= render 'shared/checkbox' %>
+      <% if @favorite %>
+        <%= render 'shared/delete-favorite-link' %>
+      <% else %>
+        <%= render 'shared/add-favorite-link' %>
+      <% end %>
     </div>
   </div>
   <div class="infos bg-light mb-4">
