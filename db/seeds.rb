@@ -226,6 +226,7 @@ puts "[VINYL TAGS] ..."
 TAGS.each do |tag|
   Tag.create(title: tag)
 end
-VinylTag.create(tag: Tag.first, user_vinyl: UserVinyl.first)
+VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
+VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
 
 puts "Seeds created !"

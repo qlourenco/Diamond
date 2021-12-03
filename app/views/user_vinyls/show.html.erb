@@ -1,6 +1,9 @@
 <div style="height: 100vh">
-  <div class="banner-vinyl" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
-    <div class="d-flex flex-row-reverse p-3">
+  <div class="banner-vinyl d-flex align-items-end" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
+    <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
+      <% @vinyl_tags.each do |vinyl_tag| %>
+        <%= vinyl_tag.tag.title %>
+      <% end %>
     </div>
   </div>
   <div class="infos bg-light mb-4" style="height: 42vh">
