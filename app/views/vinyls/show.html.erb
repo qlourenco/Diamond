@@ -7,7 +7,7 @@
   <div class="infos bg-light mb-4" style="height: 35vh">
     <div class="d-flex justify-content-between align-items-center">
       <h2 class="text-primary"><%= @vinyl.title %></h2>
-      <small id="rate"><%= image_tag 'rating', class:"mr-1" %><%= @vinyl.stars %></small>
+      <small id="rate"><%= image_tag 'rating.svg', class:"mr-1" %><%= @vinyl.stars %></small>
     </div>
     <div class="artist-year">
       <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
