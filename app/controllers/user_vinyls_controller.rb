@@ -1,6 +1,7 @@
 class UserVinylsController < ApplicationController
   def index
-    @user_vinyls = UserVinyl.all
+    @user = current_user
+    @user_vinyls = @user.user_vinyls.all
   end
 
   def create
