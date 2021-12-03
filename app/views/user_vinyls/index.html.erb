@@ -6,13 +6,12 @@
   <div class="search-bar">
     <%= render 'shared/search_bar' %>
   </div>
-
-  <div class="m-3 content-search content-padding">
+  <div class="m-3 content-search" style="padding-bottom : 45px;">
     <% @user_vinyls.each do |user_vinyl| %>
       <div class="d-flex card-search py-4 g-0">
         <%= link_to user_vinyl_path(user_vinyl) do %>
           <div class="container-img">
-              <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
+            <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
           </div>
           <div class="container-infos w-100 px-3 py-2 d-flex flex-column justify-content-between">
             <div>
@@ -28,5 +27,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
