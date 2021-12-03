@@ -10,7 +10,12 @@
       <div class="card-search  py-4 d-flex">
         <%= link_to vinyl_path(vinyl) do %>
           <div class="container-img ">
-            <img class="photo-sizing" src="<%= vinyl.cover_url %>">
+            <img class="photo-sizing position-relative" src="<%= vinyl.cover_url %>">
+            <% if @already_in_collec %>
+              <%= render 'shared/bookmark-green' %>
+            <% else %>
+              <%= render 'shared/bookmark-red' %>
+            <% end %>
           </div>
           <div class="container-infos w-50 px-3 py-2 d-flex flex-column justify-content-between">
             <div>
