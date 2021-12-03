@@ -1,6 +1,6 @@
 <div style="height: 100vh">
   <div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>');">
-    <div class="my-diamond-vinyl-show d-flex flex-row-reverse py-3 px-2">
+    <div class="d-flex flex-row-reverse py-3 px-2">
       <% if @favorite %>
         <%= render 'shared/delete-favorite-link' %>
       <% else %>
