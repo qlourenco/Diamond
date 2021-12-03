@@ -2,20 +2,20 @@
 </div>
 
 <div class="d-flex justify-content-between align-items-center m-3">
-  <h2 class="font-weight-bold">My wishlist</h2>
-  <%= image_tag "http://placehold.it/40x40", class: "rounded-circle"%>
+  <div class="avatar-navbar">
+    <%= render 'shared/avatar_navbar' %>
+  </div>
+  <h2 class="font-weight-bold">My Wish-list</h2>
 </div>
 
 <ul class="nav justify-content-between p-3">
-  <li class="nav-item font-weight-bold text-hidden">Collection</li>
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Collection', user_vinyls_path, style:"color:#9B9B9B;" %></li>
   <li class="nav-item font-weight-bold text-hidden">Suggestions</li>
   <li class="nav-item font-weight-bold">Wish-list</li>
 </ul>
 
-<div class="music-kind-view">
-</div>
 
-<div class="card-vinyl">
+<div class="card-vinyl mt-5">
   <div class="search-bar">
     <%= render 'shared/search_bar' %>
   </div>
