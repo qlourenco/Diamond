@@ -21,6 +21,7 @@
   </div>
 
   <div class="m-3 content-search">
+  <% if @vinyls %>
     <% @vinyls.each_with_index do |vinyl, index| %>
       <div class="card-search  py-4 d-flex">
         <%= link_to vinyl_path(vinyl) do %>
@@ -50,6 +51,7 @@
         <% end %>
       </div>
     <% end %>
+  <% end %>
   </div>
 </div>
 
