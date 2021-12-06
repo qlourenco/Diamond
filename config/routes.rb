@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'suggestions/index'
+  get 'suggestions/show'
   devise_for :users
   authenticated :user do
     root to: 'pages#home_user', as: :authenticated_root
@@ -29,8 +31,6 @@ Rails.application.routes.draw do
     resources :user_vinyls, only: [:create]
   end
 
-
   # The vinyls that are suggested for the user :
-  # resources :suggestions, only: [:index]
-  # TODO: :
+  resources :suggestions, only: [:index, :show]
 end
