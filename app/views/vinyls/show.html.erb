@@ -11,15 +11,15 @@
   <div class="infos bg-light mb-4">
     <div class="d-flex justify-content-between align-items-center">
       <h2 class="text-primary"><%= @vinyl.title %></h2>
-      <small id="rate"><%= image_tag 'rating.svg', class:"mr-1" %><%= @vinyl.stars %></small>
+      <small id="rate" class="d-flex align-items-baseline"><%= image_tag 'rating.svg', class:"mr-1" %><strong><%= @vinyl.stars %></strong></small>
     </div>
     <div class="artist-year">
       <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
     </div>
-    <div class="tracks-index mt-3" style="height: 18vh; overflow: scroll">
+    <div class="tracks-index mt-3 pb-3" style="height: 18vh; overflow: scroll">
       <ul class="pl-0 bg-light">
         <% @vinyl.tracks.each do |track| %>
-          <li><%= track.position %>. <%= track.title %></li>
+          <li class="justify-content-between align-items-center"><span><strong><%= track.position %>.</strong> <%= track.title %></span> <span><%= track.milliseconds %></span></li>
         <% end %>
       </ul>
     </div>
@@ -28,14 +28,8 @@
         <%= image_tag 'vinyl.png' %>
   </div>
 
-  <div>
-    <% if @already_in_collec %>
-      <%= link_to "Already in collection !", _back_url, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px; margin-top: 66px;" %>
-    <% else %>
-      <%= link_to 'Add to collection', vinyl_user_vinyls_path(@vinyl), method: :post, class:"d-flex btn btn-primary text-success font-weight-bold w-75 mx-auto mb-4 justify-content-center align-items-center", style: "font-size: 1.4rem;text-decoration: none; border-radius: 10px; height: 60px; margin-top: 66px;" %>
-    <% end %>
-  </div>
 
 
-  <%= render 'shared/back-arrow' %>
+
+
 </div>

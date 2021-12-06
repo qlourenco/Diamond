@@ -3,7 +3,7 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513746347121-4cfd77c7dc37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
   background-size: cover;
   min-height: 100vh;
-  padding-top: 24vh;
+  padding-top: 170px;
   position: relative;
   a {
 
@@ -24,7 +24,15 @@
   font-family: $font-roboto;
   font-size: 28px;
   color: #F5F4EB;
-  margin-top: 30px;
+  margin-top: 26px;
+}
+
+.home-scan-title {
+  font-family: $font-roboto;
+  font-size: 18px;
+  color: #F5F4EB;
+  margin-top: 25px;
+  margin-bottom: 0;
 }
 
 .home-subtitle {
@@ -58,8 +66,15 @@
 }
 
 .home-form {
-  margin-top: 50px !important;
+  margin-top: 170px !important;
 }
+
+.home-form-search {
+  margin-top: -17px !important;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .btn-search-home {
   border-radius: 0 !important;
   border-top-right-radius: 10px !important;
@@ -68,9 +83,9 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   border: none !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   width: 95px !important;
   color: $main-green !important;
 }
@@ -80,14 +95,10 @@
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
   height: 34px !important;
-  background-color: transparent !important;
-  &::placeholder {
-    color: $sand !important;
-  }
-  &:focus {
-    background-color: $sand !important;
-    color: $main-green;
-  }
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  background-color: $sand !important;
+  color: $main-green !important;
 }
 
 .btn-scan {
@@ -95,9 +106,16 @@
   width: 55px;
   height: 55px;
   border-radius: 50% !important;
-  background-color: $main-green !important;
+  background-color: $mid-gold !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 25px;
+  i {
+    color: $main-green;
+  }
+}
+
+.card-vinyl {
+  padding-bottom: 49px;
 }

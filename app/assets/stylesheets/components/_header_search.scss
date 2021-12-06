@@ -4,8 +4,9 @@
 
 .header-search-h2 {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  align-items: baseline;
+  font-size: 20px !important;
 }
 
 .content-search {
@@ -24,4 +25,12 @@
 .link-card {
   position: absolute;
   right: 0 !important;
+}
+
+.vinyl-count {
+  font-weight: 700;
+  color: $mid-gold;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
 }

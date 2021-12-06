@@ -17,10 +17,10 @@
   overflow: hidden;
   width: 98%;
   //height: 28vh;
+  padding-top: 33px;
   height: 32vh;
-  margin: 0 auto;
+  margin: -25px auto;
   position: relative;
-  animation: 1s ease-out 0s 1 slideDownInfo;
   #rate{
     font-size: 20px;
   }
@@ -30,18 +30,9 @@
   }
 }
 
-@keyframes slideDownInfo {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
 .vinyl-image {
     width: 98%;
-    top: 42vh;
+    top: 44vh;
     margin: 0 auto;
     position:absolute;
     z-index: 1;
@@ -78,4 +69,17 @@
 .my-diamond-vinyl-show {
   border: 4px solid black;
   width: auto;
+}
+
+.content-tag img {
+  height: 18px;
+}
+
+ .tags {
+  padding: 3px 8px 3px 8px !important;
+  color: #D0B564;
+  border-radius: 18px;
+  background-color: $main-green !important;
+  margin-right: 4px;
+  font-size: 14px !important;
 }

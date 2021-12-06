@@ -1,7 +1,12 @@
-<div class="white-navbar d-flex w-100 justify-content-around fixed-bottom p-3">
+<div class="white-navbar d-flex w-100 justify-content-between fixed-bottom p-3">
   <% search = image_tag 'search-dark.svg' %>
-  <% collection = image_tag 'collection-dark.svg' %>
+  <% collection = image_tag 'collection-white.svg' %>
+  <% back_arrow = image_tag 'chevron-gold.png' %>
 
-  <%= link_to search, authenticated_root_path  %>
+
+  <%= link_to back_arrow, authenticated_root_path %>
+  <div class="circle-btn-scan">
+    <%= link_to search, authenticated_root_path  %>
+  </div>
   <%= link_to collection, user_vinyls_path %>
 </div>

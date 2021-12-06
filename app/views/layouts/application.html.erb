@@ -45,6 +45,10 @@
     <%# <% end %>
     <% if white_bottom_navbar? %>
       <%= render 'shared/white-bottom-navbar' %>
+    <% elsif collection_bottom_navbar? %>
+      <%= render 'shared/collection-bottom-navbar' %>
+    <% elsif dark_show_bottom_navbar? %>
+      <%= render 'shared/dark-show-bottom-navbar' %>
     <% elsif dark_bottom_navbar? %>
       <%= render 'shared/dark-bottom-navbar' %>
     <% end %>

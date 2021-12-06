@@ -2,7 +2,15 @@
 
 <div class="card-vinyl">
   <div class="search-bar">
-    <%= render 'shared/search_bar' %>
+    <%= form_tag vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          required: false,
+          class: "form-control home-input",
+          placeholder: "Find your Album Vinyl"
+      %>
+    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
+    <% end %>
   </div>
 
   <div class="m-3 content-search">
@@ -36,9 +44,4 @@
       </div>
     <% end %>
   </div>
-</div>
-
-<div class="d-flex w-100 fixed-bottom p-3">
-  <% img = image_tag 'back-arrow.svg' %>
-  <%= link_to img, authenticated_root_path %>
 </div>
