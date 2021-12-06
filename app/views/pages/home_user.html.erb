@@ -1,3 +1,4 @@
+<%= render 'shared/loader_search' %>
 <div class="container-fluid home">
   <div class="avatar-navbar">
     <%= render 'shared/avatar_navbar' %>
@@ -7,13 +8,13 @@
   </div>
   <h2 class="home-user-title text-center mb-5">Create your collection</h2>
   <%= form_tag vinyls_path, method: "GET", class:"home-form w-100 d-flex justify-content-center" do %>
-      <%= text_field_tag :query,
-          params[:query],
-          required: false,
-          class: "form-control home-input",
-          placeholder: "Find your Album Vinyl"
-      %>
-    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
+    <%= text_field_tag :query,
+        params[:query],
+        required: false,
+        class: "form-control home-input",
+        placeholder: "Find your Album Vinyl"
+    %>
+    <%=  submit_tag "Search",id: "btn-search", class:"btn-mid-gold btn-search-home"%>
   <% end %>
   <h2 class="home-scan-title text-center">OR</h2>
   <div class="w-100 d-flex justify-content-center"><%= link_to icon('fas', 'camera'),  scan_vinyls_path, class: "btn-scan" %>
