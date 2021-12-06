@@ -1,16 +1,23 @@
-<%= render 'shared/header_search' %>
+<div class="m-5">
+</div>
 
-<div class="card-vinyl">
+<div class="d-flex justify-content-between align-items-center m-3">
+  <div class="avatar-navbar">
+    <%= render 'shared/avatar_navbar' %>
+  </div>
+  <h2 class="font-weight-bold">Suggestions</h2>
+</div>
+
+<ul class="nav justify-content-between p-3">
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Collection', user_vinyls_path, style:"color:#9B9B9B;" %></li>
+  <li class="nav-item font-weight-bold ">Suggestions</li>
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Wish-list', favorites_path, style:"color:#9B9B9B;" %></li>
+</ul>
+
+
+<div class="card-vinyl mt-5">
   <div class="search-bar">
-    <%= form_tag vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center" do %>
-      <%= text_field_tag :query,
-          params[:query],
-          required: false,
-          class: "form-control home-input",
-          placeholder: "Find your Album Vinyl"
-      %>
-    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
-    <% end %>
+    <%= render 'shared/search_bar' %>
   </div>
 
   <div class="m-3 content-search">
@@ -44,4 +51,9 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div class="d-flex w-100 fixed-bottom p-3">
+  <% img = image_tag 'back-arrow.svg' %>
+  <%= link_to img, authenticated_root_path %>
 </div>

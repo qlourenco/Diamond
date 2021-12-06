@@ -11,8 +11,16 @@ module NavbarHelper
   #   # (controller_name == 'vinyls' && ['show'].include?(action_name))
   # end
 
+  def collection_bottom_navbar?
+    (controller_name == 'pages' && action_name == 'home_user')
+  end
+
+  def dark_show_bottom_navbar?
+    (controller_name == 'vinyls' && action_name == 'show')
+  end
+
   def white_bottom_navbar?
-    (controller_name == 'pages' && action_name == 'home_user') ||
+    (controller_name == 'vinyls' && action_name == 'index') ||
     (controller_name == 'user_vinyls' && action_name == 'index') ||
     (controller_name == 'suggestions' && action_name == 'index') ||
     (controller_name == 'favorites' && action_name == 'index')

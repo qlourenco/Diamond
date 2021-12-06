@@ -1,6 +1,7 @@
 li{
   list-style: none;
   color: $main-green;
+  font-size: 18px !important;
 
   &:not(:last-child) {
    margin-bottom: 3px;
