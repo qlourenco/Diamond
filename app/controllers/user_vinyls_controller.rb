@@ -13,12 +13,15 @@ class UserVinylsController < ApplicationController
 
   def show
     @user_vinyl = UserVinyl.find(params[:id])
+    @tags = Tag.all
     @vinyl_tags = @user_vinyl.vinyl_tags.all
   end
 
   def update
-    @user_vinyl = current_user.user_vinyls.find(params[:vinyl_id])
-    @user_vinyl.update(user_vinyl_params)
+    @user_vinyl = UserVinyl.find(params[:id])
+    @tag = Tag.find(params[:user_vinyl][:vinyl_tags])
+    @vinyl_tag = VinylTag.create(tag: @tag, user_vinyl: @user_vinyl)
+    redirect_to user_vinyl_path(params[:id])
   end
 
   def destroy
