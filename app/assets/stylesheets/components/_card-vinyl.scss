@@ -3,7 +3,6 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.404));
   z-index: 100;
   background-size: cover;
-  background-color: $main-green;
   position:sticky;
   position: -webkit-sticky;
   top: 0;
@@ -71,15 +70,32 @@
   width: auto;
 }
 
-.content-tag img {
-  height: 18px;
+#buttonOk{
+  font-size: 25px;
+  color: $gold;
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
- .tags {
-  padding: 3px 8px 3px 8px !important;
-  color: #D0B564;
-  border-radius: 18px;
-  background-color: $main-green !important;
-  margin-right: 4px;
-  font-size: 14px !important;
+#buttonTagClose{
+  font-size: 25px;
+  color: $gold;
+}
+
+.card-tag{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: $gold;
+}
+
+.line{
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 2px;
+  width: 100%;
+}
+
+.tag-wrap{
+  flex-wrap: wrap;
 }

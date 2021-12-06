@@ -1,11 +1,41 @@
-<div style="height: 100vh">
-  <div class="banner-vinyl d-flex align-items-end" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
-    <% @vinyl_tags.each do |vinyl_tag| %>
-      <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
-        <%= vinyl_tag.tag.title %>
+<div>
+  <div id="vinyl-without">
+    <div class="banner-vinyl d-flex align-items-end justify-content-center" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
+      <div class="tag-wrap d-flex">
+        <% @vinyl_tags.each do |vinyl_tag| %>
+          <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
+            <%= vinyl_tag.tag.title %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <i id="buttonOk" class="fas fa-tag d-flex bd-highlight ml-auto p-3"></i>
+    </div>
   </div>
+  <div id="tag-with" hidden>
+    <div class="banner-vinyl" style="background-color: #2D4243;">
+      <div class="container pt-3 card-tag">
+        <div class="top-tag">
+          <h2>Add tag</h2>
+          <%= simple_form_for @user_vinyl do |f| %>
+          <%= f.input :vinyl_tags, collection: @tags, class:"form-control" %>
+          <%= f.submit "add tag" %>
+          <% end %>
+        </div>
+        <div class="line"></div>
+          <div class="bottom-tag tag-wrap d-flex align-items-start justify-content-start">
+            <% @vinyl_tags.each do |vinyl_tag| %>
+              <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
+                <%= vinyl_tag.tag.title %>
+              </div>
+            <% end %>
+          </div>
+          <i id="buttonTagClose" class="fas fa-times-circle d-flex flex-row-reverse"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="infos bg-light mb-4" style="height: 42vh">
     <div class="d-flex justify-content-between align-items-center">
       <h2 class="text-primary"><%= @user_vinyl.vinyl.title %></h2>
@@ -27,3 +57,4 @@
   <% img = image_tag 'back-arrow.svg' %>
   <%# <%= link_to img, user_vinyls_path %>
 <%# </div> %>
+<%= javascript_pack_tag 'hide_with_js' %>
