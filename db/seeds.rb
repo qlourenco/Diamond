@@ -223,10 +223,10 @@ UserVinyl.create(user: emile, vinyl: l_autre)
 
 puts "[VINYL TAGS] ..."
 # TODO: Add tags on UserVinyl
-# TAGS.each do |tag|
-#   Tag.create(title: tag)
-# end
-# VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
-# VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
+TAGS.each do |tag|
+  Tag.create(title: tag)
+end
+VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
+VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
 
 puts "Seeds created !"
