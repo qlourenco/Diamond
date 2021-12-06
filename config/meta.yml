@@ -1,0 +1,5 @@
+meta_product_name: "Diamond"
+meta_title: "Diamond - Create your vinyl collection"
+meta_description: " Create your own library by scan or search, Scroll through your vinyls and remember what you have, Find new music to suit your tastes."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"
