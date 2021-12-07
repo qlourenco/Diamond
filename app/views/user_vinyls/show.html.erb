@@ -1,6 +1,6 @@
 <div>
   <div id="vinyl-without">
-    <div class="banner-vinyl d-flex align-items-end justify-content-center" style="background-image: url('<%= @user_vinyl.vinyl.cover_url %>');">
+    <div class="banner-vinyl d-flex align-items-end justify-content-center" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.8239670868347339) 2%, rgba(253,187,45,0) 50%), url('<%= @user_vinyl.vinyl.cover_url %>');">
       <div class="tag-wrap d-flex">
         <% @vinyl_tags.each do |vinyl_tag| %>
           <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
@@ -18,15 +18,22 @@
           <h2>Add tag</h2>
           <%= simple_form_for @user_vinyl do |f| %>
           <%= f.input :vinyl_tags, collection: @tags, class:"form-control" %>
-          <%= f.submit "add tag" %>
+          <%= f.submit "add tag", class: "btn btn-primary font-weight-bold" %>
           <% end %>
         </div>
         <div class="line"></div>
           <div class="bottom-tag tag-wrap d-flex align-items-start justify-content-start">
             <% @vinyl_tags.each do |vinyl_tag| %>
-              <div class="bg-primary ml-2 mb-2 py-1 px-2 rounded-lg text-light">
-                <%= vinyl_tag.tag.title %>
-              </div>
+              <%= link_to vinyl_tag_path(vinyl_tag), method: :delete do %>
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="bg-primary text-light text-decoration-none ml-2 mb-2 py-1 px-2 rounded-left">
+                    X
+                  </div>
+                  <div class="bg-primary text-light mb-2 py-1 px-2 rounded-right">
+                    <%= vinyl_tag.tag.title %>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           </div>
           <i id="buttonTagClose" class="fas fa-times-circle d-flex flex-row-reverse"></i>
