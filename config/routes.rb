@@ -33,4 +33,5 @@ Rails.application.routes.draw do
 
   # The vinyls that are suggested for the user :
   resources :suggestions, only: [:index, :show]
+  resources :vinyl_tags, only: [:destroy]
 end

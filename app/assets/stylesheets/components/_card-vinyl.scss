@@ -73,7 +73,7 @@
 #buttonOk{
   font-size: 25px;
   color: $gold;
-  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
 #buttonTagClose{
@@ -98,4 +98,9 @@
 
 .tag-wrap{
   flex-wrap: wrap;
+}
+
+.bottom-tag{
+  color: white;
+  text-decoration: none;
 }
