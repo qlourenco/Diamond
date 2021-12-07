@@ -2,6 +2,12 @@ class UserVinylsController < ApplicationController
   def index
     @user = current_user
     @user_vinyls = @user.user_vinyls.all
+
+    arr = []
+    @user_vinyls.each do |vinyl|
+      arr << vinyl.vinyl.genre_id
+    end
+    @hash_vinyl = arr.group_by { |i| i }
   end
 
 

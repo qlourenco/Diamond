@@ -1,6 +1,6 @@
 <div class="my-divise-background">
   <%= image_tag("diamon-v1web.png", width:"194") %>
-  <div class="my-devise-form d-flex flex-column justify-content-center my-5">
+  <div class="my-devise-form d-flex flex-column justify-content-center mt-5">
     <%# LOGGIN %>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -18,16 +18,19 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class:"btn btn-primary btn-mid-gold w-50" %>
+      <div class="form-actions mb-5">
+        <%= f.button :submit, "Log in", class:"btn btn-primary btn-mid-gold w-100" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
-
-    <h2 class="my-5 home-title">Log-in with :</h2>
-    <button>GOOGLE</button>
-    <button>FACEBOOK</button>
   </div>
+    <div class="content-shared-links w-100 d-flex flex-column align-items-start">
+      <%= render "devise/shared/links" %>
+    </div>
+
+    <div class="content-connect-links w-100 d-flex flex-column align-items-start">
+      <h2 class="mt-4 mb-3 home-title">Log-in with :</h2>
+      <div class="btn-connect google"><i class="fab fa-google-plus-g"></i> Sign in with Google+</div>
+      <div class="btn-connect mt-3 facebook"><i class="fab fa-facebook-f"></i> Login with Facebook</div>
+    </div>
 </div>
 <%= render 'shared/back-arrow-devise' %>
