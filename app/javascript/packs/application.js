@@ -33,5 +33,5 @@ import { loaderSearch } from '../components/loader';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  loaderSearch()
+  loaderSearch();
 });

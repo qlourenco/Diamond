@@ -15,11 +15,20 @@
   <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Wish-list', favorites_path, style:"color:#9B9B9B;" %></li>
 </ul>
 
-<%= image_tag ("graph_holder.jpg"), class:"music-kind-view" %>
+<div class="music-kind-view">
+  <% @hash_vinyl.values.each do |count| %>
+    <%counter = count.count * 20 %>
+    <% genre = Genre.find(count[0]) %>
+    <div class="">
+      <div class="count" style="width: 18px ; height: <%= counter%>px ;"><p><%= genre.name %></p></div>
+    </div>
+  <% end %>
+</div>
+
 
 <div class="card-vinyl">
   <div class="search-bar">
-    <%= form_tag vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center" do %>
+    <%= form_tag vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center z-index-10" do %>
       <%= text_field_tag :query,
           params[:query],
           required: false,

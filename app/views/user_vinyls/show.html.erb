@@ -46,7 +46,7 @@
   <div class="infos bg-light mb-4" style="height: 42vh">
     <div class="d-flex justify-content-between align-items-center">
       <h2 class="text-primary"><%= @user_vinyl.vinyl.title %></h2>
-      <small id="rate"><%= image_tag 'rating.svg', class:"mr-1" %><%= @user_vinyl.vinyl.stars %></small>
+      <small id="rate" class="d-flex align-items-baseline"><%= image_tag 'rating.svg', class:"mr-1" %><strong><%= @user_vinyl.vinyl.stars %></strong></small>
     </div>
     <div class="artist-year">
       <small class="text-muted">by <%= @user_vinyl.vinyl.artist.name %> - <%= @user_vinyl.vinyl.release_date %></small>
