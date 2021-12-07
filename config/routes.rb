@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'suggestions/index'
   get 'suggestions/show'
+
   devise_for :users
   authenticated :user do
     root to: 'pages#home_user', as: :authenticated_root
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do
     collection do
+      post :barcode
       get :scan
       get :search
     end
