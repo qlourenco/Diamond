@@ -4,6 +4,7 @@ class UserVinylsController < ApplicationController
     @user_vinyls = @user.user_vinyls.all
   end
 
+
   def create
     @vinyl = Vinyl.find(params[:vinyl_id])
     @user = current_user

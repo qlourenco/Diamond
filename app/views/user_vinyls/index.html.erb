@@ -41,10 +41,10 @@
               <h6 class="card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
               <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
             </div>
-              <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= user_vinyl.vinyl.genre.name %></small></p>
-            </div>
-            <div class="h-75 p-3 link-card justify-content-center align-items-center d-flex flex-column">
-              <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, class:"my-trash text-white" %>
+            <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= user_vinyl.vinyl.genre.name %></small></p>
+          </div>
+          <div class="h-75 p-3 link-card justify-content-end align-items-center d-flex flex-column">
+            <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, class:"my-trash text-white" %>
           </div>
         <% end %>
       </div>
