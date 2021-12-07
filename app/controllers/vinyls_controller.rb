@@ -13,17 +13,4 @@ class VinylsController < ApplicationController
     @favorite = Favorite.find_by(user: current_user, vinyl: @vinyl)
     @already_in_collec = UserVinyl.find_by(user: current_user, vinyl: @vinyl)
   end
-
-  def scan
-
-  end
-
-  def barcode
-    @vinyl = Vinyl.find_or_initialize_by(upc: params[:upc])
-    unless @vinyl.new_record?
-      redirect_to @vinyl
-    else
-      redirect_to vinyls_path
-    end
-  end
 end

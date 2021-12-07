@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   unauthenticated :user do
     root to: 'pages#home', as: :unauthenticated_root
+
+  end
+  resources :visitors
+
+  resources :products do
+    get :get_barcode, on: :collection
   end
 
   # The vinyls that the user own in his collection:
@@ -25,7 +31,6 @@ Rails.application.routes.draw do
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do
     collection do
-      post :barcode
       get :scan
       get :search
     end
