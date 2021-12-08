@@ -20,11 +20,6 @@ Rails.application.routes.draw do
   # :listen
   # :index from other users
 
-  # resources :visitors
-
-  # resources :products do
-  #   get :get_barcode, on: :collection
-  # end
   # The vinyls that the user has put in his wish list:
   resources :favorites, only: [:index, :show, :destroy] do
     member do
