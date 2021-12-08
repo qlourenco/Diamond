@@ -1,7 +1,7 @@
 <h1 id="scan-title" class="font-weight-bold">Diamond it !</h1>
-<div id="img-scan">
+<%# <div id="img-scan">
   <%= image_tag("diamond-v1web.png", width: 194)%>
-</div>
+<%# </div> %>
 <div id='barcode-scanner'></div>
 <%= form_tag vinyls_path, method: "GET", id:"form-barcode", class:"home-form w-100 d-flex justify-content-center" do %>
   <%= hidden_field_tag :query,
