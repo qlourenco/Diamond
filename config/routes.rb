@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'suggestions/index'
   get 'suggestions/show'
+
   devise_for :users
   authenticated :user do
     root to: 'pages#home_user', as: :authenticated_root
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   unauthenticated :user do
     root to: 'pages#home', as: :unauthenticated_root
+
   end
 
   # The vinyls that the user own in his collection:
@@ -18,6 +20,11 @@ Rails.application.routes.draw do
   # :listen
   # :index from other users
 
+  # resources :visitors
+
+  # resources :products do
+  #   get :get_barcode, on: :collection
+  # end
   # The vinyls that the user has put in his wish list:
   resources :favorites, only: [:index, :show, :destroy] do
     member do
@@ -29,6 +36,7 @@ Rails.application.routes.draw do
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do
     collection do
+      get :barcode
       get :scan
       get :search
     end
