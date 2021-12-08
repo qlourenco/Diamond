@@ -97,18 +97,28 @@
 }
 
 #buttonTagClose{
-  font-size: 25px;
+  font-size: 35px;
   color: $gold;
+  bottom: 0%;
+  left: 82%;
 }
 
 .card-tag{
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   height: 100%;
   width: 100%;
   color: $gold;
   padding: 20px;
+  .top-tag{
+    width: 100%;
+    .tag-suggest{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1em;
+    }
+  }
 }
 
 .line{
