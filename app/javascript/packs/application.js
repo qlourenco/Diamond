@@ -34,10 +34,14 @@ import { loaderSearch } from '../components/loader';
 // Scanner Quagga
 import { load_quagga } from '../components/scanner';
 //
+// import { delete_card } from "../components/delete_card"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // loadQuagga()
-  loaderSearch()
+  loaderSearch();
+  // delete_card();
 });
+
+import "controllers"
