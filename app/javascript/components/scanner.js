@@ -27,29 +27,23 @@ function load_quagga() {
       Quagga.onDetected(function (result) {
         let last_code = result.codeResult.code;
         // console.log(last_code)
-        // if (last_code.length > 8) {
+        if (last_code.length > 8) {
         last_result.push(last_code);
-        // }
-        console.log(last_result)
+        }
+        // console.log(last_result)
         if (last_result.length > 20) {
-          let code = order_by_occurrence(last_result)[0];
-          // last_result = [];
+          const code = order_by_occurrence(last_result)[0];
+          last_result = [];
           Quagga.stop();
           // console.log(code)
-          // Rails.ajax({
-          //   type: "GET",
-          //   url: '/products/get_barcode',
-          //   data: { upc: code }
-          // });
+          const inputBarcode = document.querySelector("#barcode")
+          console.log(inputBarcode)
+          const formBarcode = document.querySelector("#form-barcode")
+          console.log(formBarcode)
+          inputBarcode.value = code
+          console.log(inputBarcode.value)
+          formBarcode.submit()
         }
-
-
-        // last_result.forEach( (value) => {
-
-        // })
-
-
-
       });
     }
 
