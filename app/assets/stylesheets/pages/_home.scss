@@ -2,6 +2,7 @@
 .home {
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513746347121-4cfd77c7dc37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
   background-size: cover;
+  overflow: hidden;
   min-height: 100vh;
   padding-top: 170px;
   position: relative;
