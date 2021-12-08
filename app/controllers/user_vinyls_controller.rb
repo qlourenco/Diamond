@@ -19,6 +19,13 @@ class UserVinylsController < ApplicationController
     redirect_to user_vinyl_path(@user_vinyl)
   end
 
+  def update_tag
+    @user_vinyl = UserVinyl.find(params[:id])
+    @tag = Tag.find(params[:format])
+    @vinyl_tag = VinylTag.create(tag: @tag, user_vinyl: @user_vinyl)
+    redirect_to user_vinyl_path(params[:id])
+  end
+
   def show
     @user_vinyl = UserVinyl.find(params[:id])
     @tags = Tag.all
