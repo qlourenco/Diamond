@@ -7,3 +7,9 @@
     height: 100vh;
   }
 }
+
+#form-for-barcode {
+  position: absolute;
+  top: 40%;
+  z-index: -1;
+}

@@ -28,6 +28,7 @@ module NavbarHelper
 
   def dark_bottom_navbar?
     (controller_name == 'user_vinyls' && action_name == 'show') ||
+    (controller_name == 'vinyls' && action_name == 'scan') ||
     (controller_name == 'suggestions' && action_name == 'show') ||
     (controller_name == 'favorites' && action_name == 'show')
   end
