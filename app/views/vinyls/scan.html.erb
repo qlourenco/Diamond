@@ -1,12 +1,13 @@
-
 <div id='barcode-scanner'></div>
 
-<% form_tag vinyls_path, method: "GET", id:"form-barcode", class:"home-form w-100 d-flex justify-content-center" do %>
-  <%= text_field_tag :query,
-      params[:query],
-      required: false,
-      id: :barcode,
-      class: "form-control home-input"
-  %>
-  <%  submit_tag "Search",id: "btn-search", class:"btn-mid-gold btn-search-home"%>
-<% end %>
+<div id="form-for-barcode">
+  <%= form_tag vinyls_path, method: "GET", id:"form-barcode", class:"home-form w-100 d-flex justify-content-center" do %>
+    <%= text_field_tag :query,
+        params[:query],
+        required: false,
+        id: :barcode,
+        class: "form-control home-input"
+    %>
+    <%=  submit_tag "Search",id: "btn-search", class:"btn-mid-gold btn-search-home"%>
+  <% end %>
+</div>

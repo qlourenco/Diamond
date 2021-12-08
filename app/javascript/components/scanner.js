@@ -34,15 +34,15 @@ function load_quagga() {
         if (last_result.length > 20) {
           const code = order_by_occurrence(last_result)[0];
           last_result = [];
-          Quagga.stop();
-          // console.log(code)
+          console.log(code)
           const inputBarcode = document.querySelector("#barcode")
-          console.log(inputBarcode)
+          // console.log(inputBarcode)
           const formBarcode = document.querySelector("#form-barcode")
-          console.log(formBarcode)
+          // console.log(formBarcode)
           inputBarcode.value = code
           console.log(inputBarcode.value)
           formBarcode.submit()
+          Quagga.stop();
         }
       });
     }
