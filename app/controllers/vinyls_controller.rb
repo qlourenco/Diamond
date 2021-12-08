@@ -13,4 +13,17 @@ class VinylsController < ApplicationController
     @favorite = Favorite.find_by(user: current_user, vinyl: @vinyl)
     @already_in_collec = UserVinyl.find_by(user: current_user, vinyl: @vinyl)
   end
+
+  def scan; end
+
+  def barcode
+    # @barcode = load_quagga
+    #   @barcode = UserVinyl.find_or_initialize_by(upc: params[:upc])
+    #   unless @barcode.new_record?
+    #     redirect_to @barcode
+    #   else
+    #     redirect_to new_barcode_path(upc: params[:upc])
+    #   end
+    # end
+  end
 end

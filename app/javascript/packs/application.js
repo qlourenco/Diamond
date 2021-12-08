@@ -32,7 +32,7 @@ import { loaderSearch } from '../components/loader';
 // import { initSelect2 } from '../components/init_select2';
 
 // Scanner Quagga
-// import { loadQuagga } from '../components/scanner';
+import { load_quagga } from '../components/scanner';
 //
 
 document.addEventListener('turbolinks:load', () => {
@@ -41,67 +41,3 @@ document.addEventListener('turbolinks:load', () => {
   // loadQuagga()
   loaderSearch()
 });
-
-import Quagga from 'quagga';
-
-//= require quagga
-//= require_tree .
-
-
-function order_by_occurrence(arr) {
-  var counts = {};
-  arr.forEach(function (value) {
-    if (!counts[value]) {
-      counts[value] = 0;
-    }
-    counts[value]++;
-  });
-
-  return Object.keys(counts).sort(function (curKey, nextKey) {
-    return counts[curKey] < counts[nextKey];
-  });
-}
-
-function load_quagga() {
-  if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') { //$('#barcode-scanner').length > 0 &&
-
-    var last_result = [];
-    if (Quagga.initialized == undefined) {
-      Quagga.onDetected(function (result) {
-        var last_code = result.codeResult.code;
-       // console.log(last_code)
-        last_result.push(last_code);
-       // console.log(last_result)
-        if (last_result.length > 20) {
-          let code = order_by_occurrence(last_result)[0];
-          last_result = [];
-          Quagga.stop();
-        //  console.log(code)
-          // Rails.ajax({
-          //   type: "GET",
-          //   url: '/products/get_barcode',
-          //   data: { upc: code }
-          // });
-        }
-      });
-    }
-
-    Quagga.init({
-      inputStream: {
-        name: "Live",
-        type: "LiveStream",
-        numOfWorkers: navigator.hardwareConcurrency,
-        target: document.querySelector('#barcode-scanner')
-      },
-      decoder: {
-        readers: ['ean_reader', 'ean_8_reader', 'code_39_reader', 'code_39_vin_reader', 'codabar_reader', 'upc_reader', 'upc_e_reader']
-      }
-    }, function (err) {
-      if (err) { console.log(err); return }
-      Quagga.initialized = true;
-      Quagga.start();
-    });
-
-  }
-};
-$(document).on('turbolinks:load', load_quagga);

@@ -1,6 +1,6 @@
-class VisitorsController < ApplicationController
-  # before_action :authenticate_user!, :except => [:index]
-  def index
+# class VisitorsController < ApplicationController
+#   # before_action :authenticate_user!, :except => [:index]
+#   def index
 
-  end
-end
+#   # end
+# end
