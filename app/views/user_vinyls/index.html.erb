@@ -16,15 +16,14 @@
 </ul>
 
 <div class="music-kind-view">
-  <% @hash_vinyl.values.each do |count| %>
-    <%counter = count.count * 20 %>
+  <% @hash_vinyl.values[0..3].each do |count| %>
+    <% counter = (count.count.to_f / @user_vinyls.count.to_f) * 203.to_f %>
     <% genre = Genre.find(count[0]) %>
     <div class="">
-      <div class="count" style="width: 18px ; height: <%= counter%>px ;"><p><%= genre.name %></p></div>
+      <div class="count text-center p-1" style="min-width: 50px; height: <%= counter%>px;"><p><%= genre.name %></p><div class="counter"><%= count.count  %></div></div>
     </div>
   <% end %>
 </div>
-
 
 <div class="card-vinyl">
   <div class="search-bar">

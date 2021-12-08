@@ -8,6 +8,7 @@ class UserVinylsController < ApplicationController
       arr << vinyl.vinyl.genre_id
     end
     @hash_vinyl = arr.group_by { |i| i }
+
   end
 
 
