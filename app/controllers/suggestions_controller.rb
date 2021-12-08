@@ -8,8 +8,8 @@ class SuggestionsController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "title ILIKE :query OR name ILIKE :query"
-      @suggestions = Suggestion.joins(vinyl: :artist).where(sql_query, query: "%#{params[:query]}%")
+      sql_query = "title ILIKE :query"
+      @suggestions = Suggestion.where(sql_query, query: "%#{params[:query]}%")
     else
       @suggestions = Suggestion.all
     end
