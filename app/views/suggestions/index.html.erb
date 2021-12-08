@@ -15,20 +15,8 @@
 </ul>
 
 
-<div class="card-vinyl mt-5">
-  <div class="search-bar">
-    <%= form_tag suggestions_index_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center z-index-10" do %>
-      <%= text_field_tag :query,
-          params[:query],
-          required: false,
-          class: "form-control home-input",
-          placeholder: "Find your Album Vinyl"
-      %>
-    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
-    <% end %>
-  </div>
-
-  <div class="m-3 content-search">
+<div class="card-vinyl">
+  <div class="mx-3 mb-3 content-search">
 
   <% if @vinyls %>
     <% @vinyls.each_with_index do |vinyl, index| %>
