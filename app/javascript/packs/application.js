@@ -28,20 +28,21 @@ import Rails from '@rails/ujs'
 
 // Loader Search
 import { loaderSearch } from '../components/loader';
+
 // Internal imports, e.g:
+import { delete_card } from "../components/delete_card"
+
 // import { initSelect2 } from '../components/init_select2';
 
 // Scanner Quagga
 import { load_quagga } from '../components/scanner';
 //
-// import { delete_card } from "../components/delete_card"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // loadQuagga()
   loaderSearch();
-  // delete_card();
+  delete_card();
 });
 
-import "controllers"
