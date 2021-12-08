@@ -1,24 +1,15 @@
 class SuggestionsController < ApplicationController
   def index
-    if current_user.vinyls.empty?
-      puts "We cannot recommend you some vinyls with an empty collection"
+    if current_user.user_vinyls.empty?
+      @vinyls = Vinyl.all.shuffle.take(10)
     else
-      @hash = current_user.vinyls.group(:artist).order(:count).count
-      @top3s = @hash.to_a.reverse.take(3)
-      @top3_names = []
-      @top1 = @top3s[0][0].name
-      @top2 = @top3s[1][0].name
-      @top3 = @top3s[2][0].name
-      @top3_names << @top1
-      @top3_names << @top2
-      @top3_names << @top3
-      @query = @top3_names.sample
+      # @query = current_user.user_vinyls.sample.vinyl.artist.name
+      @vinyls = Suggestion.find_from_discogs('nekfeu')
+    end
 
-      @vinyls = Suggestion.find_from_discogs(@query)
-      @already_in_collecs = []
-      @vinyls.each do |vinyl|
-        @already_in_collecs << @already_in_collec = UserVinyl.find_by(user: current_user, vinyl: vinyl)
-      end
+    @already_in_collecs = []
+    @vinyls.each do |vinyl|
+      @already_in_collecs << @already_in_collec = UserVinyl.find_by(user: current_user, vinyl: vinyl)
     end
   end
 

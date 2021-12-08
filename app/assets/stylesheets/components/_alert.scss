@@ -1,6 +1,21 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  top: 16px;
+  left: 16px;
   z-index: 1000;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 4px 8px 4px 8px !important;
+  background-color: $mid-gold;
+  color: $main-green;
+  border: none;
+  .close {
+    padding: 0 !important;
+    position: relative !important;
+    margin-left: 8px;
+    color: $main-green;
+  }
 }

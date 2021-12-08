@@ -6,7 +6,7 @@
   <div class="avatar-navbar">
     <%= render 'shared/avatar_navbar' %>
   </div>
-  <h2 class="font-weight-bold">My Wish-list</h2>
+  <h2 class="font-weight-bold">Wish-list</h2>
 </div>
 
 <ul class="nav justify-content-between p-3">
@@ -15,8 +15,19 @@
   <li class="nav-item font-weight-bold">Wish-list</li>
 </ul>
 
-<div class="card-vinyl">
-  <div class="mx-3 content-search" style="padding-bottom : 45px;">
+<div class="card-vinyl mt-5">
+  <div class="search-bar">
+    <%= form_tag vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center z-index-10" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          required: false,
+          class: "form-control home-input",
+          placeholder: "Find your Album Vinyl"
+      %>
+    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
+    <% end %>
+  </div>
+  <div class="m-3 content-search" style="padding-bottom : 45px;">
     <% @favorites.reverse_each do |favorite| %>
       <div class="d-flex card-search py-4 g-0">
         <%= link_to favorite_path(favorite) do %>
@@ -28,11 +39,11 @@
               <h6 class="card-text title-sizing text-white"><%= favorite.vinyl.title %></h6>
               <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
             </div>
-              <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= favorite.vinyl.genre.name %></small></p>
-            </div>
-            <div class="h-75 p-3 link-card justify-content-between align-items-center d-flex flex-column">
-
-            <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(favorite), method: :post %>
+            <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= favorite.vinyl.genre.name %></small></p>
+          </div>
+          <div class="h-75 p-3 link-card-favortites justify-content-between align-items-center d-flex flex-column">
+            <%= link_to icon('fas', 'trash-alt'), favorite_path(favorite), method: :delete, class:"my-trash text-white" %>
+            <%= link_to icon('fas', 'plus'), create_from_favorite_favorite_path(favorite), method: :post %>
           </div>
         <% end %>
       </div>

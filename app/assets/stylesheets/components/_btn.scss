@@ -18,3 +18,28 @@
   font-size: 19px;
   color: $sand;
 }
+
+.content-connect-links {
+  h2 {
+    font-size: 20px;
+  }
+  .btn-connect {
+    width: 215px;
+    height: 38px;
+    border-radius: 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .google {
+    background-color: #cf4332;
+  }
+
+  .facebook {
+    background-color: #3c66c4;
+  }
+}

@@ -26,7 +26,12 @@ Rails.application.routes.draw do
   #   get :get_barcode, on: :collection
   # end
   # The vinyls that the user has put in his wish list:
-  resources :favorites, only: [:index, :show, :destroy]
+  resources :favorites, only: [:index, :show, :destroy] do
+    member do
+      post :create_from_favorite
+    end
+    resources :user_vinyls, only: [:create_from_favorite]
+  end
 
   # The vinyls that the user doesn't own:
   resources :vinyls, only: [:index, :show] do
@@ -41,4 +46,5 @@ Rails.application.routes.draw do
 
   # The vinyls that are suggested for the user :
   resources :suggestions, only: [:index, :show]
+  resources :vinyl_tags, only: [:destroy]
 end
