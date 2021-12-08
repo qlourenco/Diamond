@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
 
   # The vinyls that the user own in his collection:
-  resources :user_vinyls, only: [:index, :show, :update, :destroy]
+  resources :user_vinyls, only: [:index, :show, :update, :destroy] do
+    member do
+      patch :update_tag
+    end
+  end
   # TODO: :
   # -- SHOULD HAVE --
   # :users
