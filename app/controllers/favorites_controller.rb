@@ -1,6 +1,11 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR name ILIKE :query"
+      @favorites = Favorite.joins(vinyl: :artist).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @favorites = Favorite.all
+    end
   end
 
   def create_from_favorite

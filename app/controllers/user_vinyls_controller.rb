@@ -1,7 +1,12 @@
 class UserVinylsController < ApplicationController
   def index
     @user = current_user
-    @user_vinyls = @user.user_vinyls.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR name ILIKE :query"
+      @user_vinyls = UserVinyl.joins(vinyl: :artist).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @user_vinyls = @user.user_vinyls.all
+    end
 
     arr = []
     @user_vinyls.each do |vinyl|
@@ -9,7 +14,6 @@ class UserVinylsController < ApplicationController
     end
     @hash_vinyl = arr.group_by { |i| i }
   end
-
 
   def create
     @vinyl = Vinyl.find(params[:vinyl_id])
