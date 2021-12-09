@@ -14,8 +14,8 @@ function order_by_occurrence(arr) {
 }
 
 function load_quagga() {
-  const barcode_scanner = document.querySelector("#barcode-scanner")
-  if (barcode_scanner == null) {
+  const barcodeScanner = document.querySelector("#barcode-scanner")
+  if (barcodeScanner == null) {
     return
   }
   if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') { //$('#barcode-scanner').length > 0 &&
@@ -48,6 +48,10 @@ function load_quagga() {
       inputStream: {
         name: "Live",
         type: "LiveStream",
+        constraints: {
+          width: 350,
+          height: 1000
+        },
         numOfWorkers: navigator.hardwareConcurrency,
         target: document.querySelector('#barcode-scanner')
       },
