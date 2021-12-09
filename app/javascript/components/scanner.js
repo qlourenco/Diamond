@@ -49,8 +49,8 @@ function load_quagga() {
         name: "Live",
         type: "LiveStream",
         constraints: {
-          width: 375,
-          height: 812
+          width: 762,
+          height: 375
         },
         numOfWorkers: navigator.hardwareConcurrency,
         target: document.querySelector('#barcode-scanner')

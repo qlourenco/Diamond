@@ -155,71 +155,73 @@
 # Favorite.create(user: emile, vinyl: the_now_now)
 # Favorite.create(user: emile, vinyl: it_was_written)
 # Favorite.create(user: emile, vinyl: ego_trip)
+=======
+
 
 # puts "[TAGS] ..."
 # TAGS = ["1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020", "Summer", "Winter", "Spring", "Autumn", "Favorites", "Travel", "Bad mood", "Happy", "Dance", "Sing", "Beats", "Live", "Rave", "Cool", "French", "German", "Hispanic", "English", "US", "Russian", "Oriental", "Asian", "African", "European", "American", "Chill", "Nostalgia", "Childhood", "Rain", "Training", "Studying"].sort
 
-# puts "[TRACKS] ..."
-# # TODO: Tracks + add in Vinyl
-# def search_track(vinyl)
-#   auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
-#   search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
-#   master_url = search.results[0]['master_url']
-#   search_serialized = URI.open(master_url).read
-#   master = JSON.parse(search_serialized)
-#   main_release_url = master['main_release_url']
-#   main_release_serialized = URI.open(main_release_url).read
-#   main_release = JSON.parse(main_release_serialized)
-#   main_release['tracklist'].each do |track|
-#     Track.create(title: track['title'], position: track['position'], milliseconds: track['duration'], vinyl_id: vinyl.id)
-#   end
-#   vinyl.stars = main_release['community']['rating']['average']
-#   vinyl.save
-# end
+puts "[TRACKS] ..."
+# TODO: Tracks + add in Vinyl
+def search_track(vinyl)
+  auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
+  search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
+  master_url = search.results[0]['master_url']
+  search_serialized = URI.open(master_url).read
+  master = JSON.parse(search_serialized)
+  main_release_url = master['main_release_url']
+  main_release_serialized = URI.open(main_release_url).read
+  main_release = JSON.parse(main_release_serialized)
+  main_release['tracklist'].each do |track|
+    Track.create(title: track['title'], position: track['position'], milliseconds: track['duration'], vinyl_id: vinyl.id)
+  end
+  vinyl.stars = main_release['community']['rating']['average']
+  vinyl.save
+end
 
 
-# search_track(nevermind)
-# search_track(bagatelle)
-# search_track(endless_smile)
+search_track(nevermind)
+search_track(bagatelle)
+search_track(endless_smile)
 
 
-# def search_stars(vinyl)
-#   auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
-#   search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
-#   master_url = search.results[0]['master_url']
-#   search_serialized = URI.open(master_url).read
-#   master = JSON.parse(search_serialized)
-#   main_release_url = master['main_release_url']
-#   main_release_serialized = URI.open(main_release_url).read
-#   main_release = JSON.parse(main_release_serialized)
-# end
+def search_stars(vinyl)
+  auth_wrapper = Discogs::Wrapper.new('Diamond', user_token: 'RLyIMYkXUJjJzRuzIjCLXvWTXsCkjbYvuubbvhoz')
+  search = auth_wrapper.search("#{vinyl.title}", per_page: 10, type: :releases_title)
+  master_url = search.results[0]['master_url']
+  search_serialized = URI.open(master_url).read
+  master = JSON.parse(search_serialized)
+  main_release_url = master['main_release_url']
+  main_release_serialized = URI.open(main_release_url).read
+  main_release = JSON.parse(main_release_serialized)
+end
 
-# search_stars(nevermind)
-# search_stars(bagatelle)
-# search_stars(endless_smile)
+search_stars(nevermind)
+search_stars(bagatelle)
+search_stars(endless_smile)
 
 
-# puts "[USER VINYLS] ..."
-# UserVinyl.create(user: emile, vinyl: black_holes_and_revelation)
-# UserVinyl.create(user: emile, vinyl: demon_days)
-# UserVinyl.create(user: emile, vinyl: the_dark_side_of_the_moon)
-# UserVinyl.create(user: emile, vinyl: atom_heart_mother)
-# UserVinyl.create(user: emile, vinyl: wish_you_were_here)
-# UserVinyl.create(user: emile, vinyl: hunky_dory)
-# UserVinyl.create(user: emile, vinyl: nevermind)
-# UserVinyl.create(user: emile, vinyl: ziggy_stardust_the_motion_picture)
-# UserVinyl.create(user: emile, vinyl: star_people)
-# UserVinyl.create(user: emile, vinyl: blue_moods)
-# UserVinyl.create(user: emile, vinyl: sings_the_blues)
-# UserVinyl.create(user: emile, vinyl: satchmo_sings)
-# UserVinyl.create(user: emile, vinyl: at_the_crescendo_vol_2)
-# UserVinyl.create(user: emile, vinyl: the_slim_shady_lp)
-# UserVinyl.create(user: emile, vinyl: the_eminem_show)
-# UserVinyl.create(user: emile, vinyl: ulma_une_main_lave_l_autre)
-# UserVinyl.create(user: emile, vinyl: feu)
-# UserVinyl.create(user: emile, vinyl: t_es_triste)
-# UserVinyl.create(user: emile, vinyl: endless_smile)
-# UserVinyl.create(user: emile, vinyl: l_autre)
+puts "[USER VINYLS] ..."
+UserVinyl.create(user: emile, vinyl: black_holes_and_revelation)
+UserVinyl.create(user: emile, vinyl: demon_days)
+UserVinyl.create(user: emile, vinyl: the_dark_side_of_the_moon)
+UserVinyl.create(user: emile, vinyl: atom_heart_mother)
+UserVinyl.create(user: emile, vinyl: wish_you_were_here)
+UserVinyl.create(user: emile, vinyl: hunky_dory)
+UserVinyl.create(user: emile, vinyl: nevermind)
+UserVinyl.create(user: emile, vinyl: ziggy_stardust_the_motion_picture)
+UserVinyl.create(user: emile, vinyl: star_people)
+UserVinyl.create(user: emile, vinyl: blue_moods)
+UserVinyl.create(user: emile, vinyl: sings_the_blues)
+UserVinyl.create(user: emile, vinyl: satchmo_sings)
+UserVinyl.create(user: emile, vinyl: at_the_crescendo_vol_2)
+UserVinyl.create(user: emile, vinyl: the_slim_shady_lp)
+UserVinyl.create(user: emile, vinyl: the_eminem_show)
+UserVinyl.create(user: emile, vinyl: ulma_une_main_lave_l_autre)
+UserVinyl.create(user: emile, vinyl: feu)
+UserVinyl.create(user: emile, vinyl: t_es_triste)
+UserVinyl.create(user: emile, vinyl: endless_smile)
+UserVinyl.create(user: emile, vinyl: l_autre)
 
 # puts "[VINYL TAGS] ..."
 # # TODO: Add tags on UserVinyl
@@ -227,7 +229,7 @@
 #   Tag.create(title: tag)
 # end
 
-# VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
-# VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
+VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
+VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
 
 puts "Seeds created !"
