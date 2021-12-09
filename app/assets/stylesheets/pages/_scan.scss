@@ -3,19 +3,21 @@
 }
 
 #scan-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 2rem;
+  background-color: $main-green;
+  color: $mid-gold;
   text-align: center;
   padding-top:10px;
+  img {
+    top: 12px;
+    position: relative;
+    height: 80px;
+    width: auto;
+    margin: 1rem;
+  }
 }
 #barcode-scanner {
-  position: absolute;
 }
-// #img-scan {
-//   display: inline-block;
-//   text-align: center;
-//   margin: 2rem auto;
-//   img {
-//     height: 80px;
-//     width: auto;
-//     display: inline-block;
-//   }
-// }
