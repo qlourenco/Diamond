@@ -13,7 +13,9 @@ class UserVinylsController < ApplicationController
       arr << vinyl.vinyl.genre_id
     end
     @hash_vinyl = arr.group_by { |i| i }
-
+    @first_genre = @hash_vinyl.values[0]
+    @second_genre = @hash_vinyl.values[1]
+    @third_genre = @hash_vinyl.values[2]
   end
 
   def create
