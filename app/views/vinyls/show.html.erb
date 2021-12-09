@@ -16,7 +16,7 @@
     <div class="artist-year">
       <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
     </div>
-    <div class="tracks-index mt-3 pb-3" style="height: 18vh; overflow: scroll">
+    <div class="tracks-index mt-3 pb-3" style="height: 25vh; overflow: scroll">
       <ul class="pl-0 bg-light">
         <% @vinyl.tracks.each do |track| %>
           <li class="justify-content-between align-items-center"><span><strong><%= track.position %>.</strong> <%= track.title %></span> <span><%= track.milliseconds %></span></li>

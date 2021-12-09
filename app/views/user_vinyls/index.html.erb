@@ -6,23 +6,24 @@
   <div class="avatar-navbar">
     <%= render 'shared/avatar_navbar' %>
   </div>
-  <h2 class="font-weight-bold">Collection</h2>
+  <h2 class="font-weight-bold header-search-h2"><span class="vinyl-count"><%= @user_vinyls.count %></span> vinyls in your collection</h2>
 </div>
 
 <ul class="nav justify-content-between p-3">
   <li class="nav-item font-weight-bold">Collection</li>
-  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#9B9B9B;" %></li>
-  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Wish list', favorites_path, style:"color:#9B9B9B;" %></li>
+  <li class="nav-item text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#c2c2c2;" %></li>
+  <li class="nav-item text-hidden"><%= link_to 'Wishlist', favorites_path, style:"color:#c2c2c2;" %></li>
 </ul>
 
 <div class="music-kind-view">
-  <% @hash_vinyl.values[0..3].each do |count| %>
-    <% counter = (count.count.to_f / @user_vinyls.count.to_f) * 203.to_f %>
-    <% genre = Genre.find(count[0]) %>
-    <div class="">
-      <div class="count text-center p-1" style="min-width: 50px; height: <%= counter%>px;"><p><%= genre.name %></p><div class="counter"><%= count.count  %></div></div>
+    <% genre_first = Genre.find(@first_genre[0]) %>
+    <% genre_second = Genre.find(@second_genre[0]) %>
+    <% genre_third = Genre.find(@third_genre[0]) %>
+    <div class="d-flex align-items-end">
+      <div class="count text-center p-1" style="min-width: 50px; height: 50px;"><p><%= genre_second.name %></p><div class="counter font-weight-bold"><%= @second_genre.count  %></div></div>
+      <div class="count text-center p-1" style="min-width: 50px; height: 75px;"><p><%= genre_first.name %></p><div class="counter"><%= @first_genre.count  %></div></div>
+      <div class="count text-center p-1" style="min-width: 50px; height: 25px;"><p><%= genre_third.name %></p><div class="counter"><%= @third_genre.count  %></div></div>
     </div>
-  <% end %>
 </div>
 
 <div class="card-vinyl">
@@ -32,9 +33,11 @@
           params[:query],
           required: false,
           class: "form-control home-input",
-          placeholder: "Find your Album Vinyl"
+          placeholder: "Nevermind..."
       %>
-    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
+    <%= button_tag(type: "submit",id: "btn-search", class: "btn-mid-gold btn-search-home") do %>
+      <i class="fas fa-search"></i>
+    <% end %>
     <% end %>
   </div>
   <div class="m-3 content-search" style="padding-bottom : 45px;">

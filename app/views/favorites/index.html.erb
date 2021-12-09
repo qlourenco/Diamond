@@ -5,30 +5,17 @@
   <div class="avatar-navbar">
     <%= render 'shared/avatar_navbar' %>
   </div>
-  <h2 class="font-weight-bold">Wish list</h2>
+  <h2 class="font-weight-bold header-search-h2"><span class="vinyl-count"><%= @favorites.count %></span> vinyls in your wishlist</h2>
 </div>
 
 <ul class="nav justify-content-between p-3">
-  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Collection', user_vinyls_path, style:"color:#9B9B9B;" %></li>
-  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#9B9B9B;" %></li>
-  <li class="nav-item font-weight-bold">Wish list</li>
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Collection', user_vinyls_path, style:"color:#c2c2c2;" %></li>
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#c2c2c2;" %></li>
+  <li class="nav-item font-weight-bold">Wishlist</li>
 </ul>
 
-<div class="card-vinyl mt-5">
-
-  <div class="search-bar">
-    <%= form_tag favorites_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center z-index-10" do %>
-      <%= text_field_tag :query,
-          params[:query],
-          required: false,
-          class: "form-control home-input",
-          placeholder: "Find your favorite Vinyl"
-      %>
-    <%=  submit_tag "Search", class:"btn-mid-gold btn-search-home"%>
-    <% end %>
-  </div>
-
-  <div class="m-3 content-search" style="padding-bottom : 45px;">
+<div class="card-vinyl">
+  <div class="ml-3 mr-3 mb-3 content-search" style="padding-bottom : 45px;">
     <% @favorites.reverse_each do |favorite| %>
 
       <div class="d-flex card-search py-4 g-0">

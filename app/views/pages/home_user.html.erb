@@ -12,9 +12,11 @@
         params[:query],
         required: false,
         class: "form-control home-input",
-        placeholder: "Find your Album Vinyl"
+        placeholder: "Nevermind"
     %>
-    <%=  submit_tag "Search",id: "btn-search", class:"btn-mid-gold btn-search-home"%>
+    <%= button_tag(type: "submit",id: "btn-search", class: "btn-mid-gold btn-search-home") do %>
+      <i class="fas fa-search"></i>
+    <% end %>
   <% end %>
   <h2 class="home-scan-title text-center">OR</h2>
   <div class="w-100 d-flex justify-content-center"><%= link_to icon('fas', 'camera'),  scan_vinyls_path, class: "btn-scan" %>
