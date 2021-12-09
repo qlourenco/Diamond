@@ -49,7 +49,7 @@ function load_quagga() {
         name: "Live",
         type: "LiveStream",
         constraints: {
-          width: 812,
+          width: 762,
           height: 375
         },
         numOfWorkers: navigator.hardwareConcurrency,
