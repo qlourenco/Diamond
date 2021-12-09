@@ -14,16 +14,13 @@ class VinylsController < ApplicationController
     @already_in_collec = UserVinyl.find_by(user: current_user, vinyl: @vinyl)
   end
 
-  def scan; end
+  def scan
+  end
 
   def barcode
-    # @barcode = load_quagga
-    #   @barcode = UserVinyl.find_or_initialize_by(upc: params[:upc])
-    #   unless @barcode.new_record?
-    #     redirect_to @barcode
-    #   else
-    #     redirect_to new_barcode_path(upc: params[:upc])
-    #   end
-    # end
+    @query = params[:query]
+    @vinyl = Vinyl.find_from_discogs(@query)
+    @vinyl_id = @vinyl[0].id
+    redirect_to vinyl_path(@vinyl_id)
   end
 end

@@ -1,25 +1,23 @@
-
 import Quagga from 'quagga';
-
 //= require quagga
 //= require_tree .
-
 
 function order_by_occurrence(arr) {
   let counts = {};
   arr.forEach(function (value) {
-    if (!counts[value]) {
-      counts[value] = 0;
-    }
+    if (!counts[value]) { counts[value] = 0; }
     counts[value]++;
   });
-
   return Object.keys(counts).sort(function (curKey, nextKey) {
     return counts[curKey] < counts[nextKey];
   });
 }
 
 function load_quagga() {
+  const barcodeScanner = document.querySelector("#barcode-scanner")
+  if (barcodeScanner == null) {
+    return
+  }
   if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') { //$('#barcode-scanner').length > 0 &&
 
     let last_result = [];
@@ -46,11 +44,14 @@ function load_quagga() {
         }
       });
     }
-
     Quagga.init({
       inputStream: {
         name: "Live",
         type: "LiveStream",
+        constraints: {
+          width: 350,
+          height: 1000
+        },
         numOfWorkers: navigator.hardwareConcurrency,
         target: document.querySelector('#barcode-scanner')
       },
@@ -62,8 +63,8 @@ function load_quagga() {
       Quagga.initialized = true;
       Quagga.start();
     });
-
   }
-  // return last_result;
 };
-$(document).on('turbolinks:load', load_quagga);
+// if (window.location.href == 'https://www.diamond-app.fr/vinyls/scan' || window.location.href == 'http://localhost:3000/vinyls/scan' || window.location.pathname == '/') { // window.location.pathname == '/' ||
+  $(document).on('turbolinks:load', load_quagga);
+// }

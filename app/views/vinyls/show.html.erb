@@ -1,5 +1,5 @@
 <div style="height: 100vh">
-  <div class="banner-vinyl" style="background-image: url('<%= @vinyl.cover_url %>');">
+  <div class="banner-vinyl" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.8239670868347339) 0%, rgba(253,187,45,0) 25%), url('<%= @vinyl.cover_url %>');">
     <div class="d-flex flex-row-reverse py-3 px-2">
       <% if @favorite %>
         <%= render 'shared/delete-favorite-link' %>
@@ -16,7 +16,7 @@
     <div class="artist-year">
       <small class="text-muted">by <%= @vinyl.artist.name %> - <%= @vinyl.release_date %></small>
     </div>
-    <div class="tracks-index mt-3 pb-3" style="height: 18vh; overflow: scroll">
+    <div class="tracks-index mt-3 pb-3" style="height: 25vh; overflow: scroll">
       <ul class="pl-0 bg-light">
         <% @vinyl.tracks.each do |track| %>
           <li class="justify-content-between align-items-center"><span><strong><%= track.position %>.</strong> <%= track.title %></span> <span><%= track.milliseconds %></span></li>

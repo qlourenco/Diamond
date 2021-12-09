@@ -13,7 +13,9 @@ class UserVinylsController < ApplicationController
       arr << vinyl.vinyl.genre_id
     end
     @hash_vinyl = arr.group_by { |i| i }
-
+    @first_genre = @hash_vinyl.values[0]
+    @second_genre = @hash_vinyl.values[1]
+    @third_genre = @hash_vinyl.values[2]
   end
 
   def create
@@ -31,12 +33,14 @@ class UserVinylsController < ApplicationController
   end
 
   def show
+
     @user_vinyl = UserVinyl.find(params[:id])
     @tags = Tag.all
     @vinyl_tags = @user_vinyl.vinyl_tags.all
   end
 
   def update
+    # binding.pry
     @user_vinyl = UserVinyl.find(params[:id])
     @tag = Tag.find(params[:user_vinyl][:vinyl_tags])
     @vinyl_tag = VinylTag.create(tag: @tag, user_vinyl: @user_vinyl)
