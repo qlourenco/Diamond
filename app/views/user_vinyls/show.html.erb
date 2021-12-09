@@ -2,7 +2,7 @@
   <div class="banner-vinyl d-flex align-items-end justify-content-center" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.8239670868347339) 2%, rgba(253,187,45,0) 50%), url('<%= @user_vinyl.vinyl.cover_url %>'); height: 380px;">
     <div class="tag-wrap d-flex">
       <% @vinyl_tags.each do |vinyl_tag| %>
-        <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark">
+        <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark font-weight-bold">
           <%= vinyl_tag.tag.title %>
         </div>
       <% end %>
@@ -22,12 +22,12 @@
           <% end %>
 
           <div class="tag-suggest">
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(4).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(4)), method: :patch %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(33).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(33)), method: :patch %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(22).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(22)), method: :patch %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(14).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(14)), method: :patch %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(7).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(7)), method: :patch %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(34).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(34)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(4).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(4)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(33).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(33)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(22).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(22)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(14).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(14)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(7).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(7)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill"><%= link_to @tags.find(34).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(34)), method: :patch, class: "text-dark text-decoration-none font-weight-bold" %></div>
           </div>
         </div>
 
@@ -40,8 +40,8 @@
           </div>
           <div class="d-flex flex-wrap mt-3">
             <% @vinyl_tags.each do |vinyl_tag| %>
-              <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark">
-                <%= link_to vinyl_tag_path(vinyl_tag), method: :delete do %>
+              <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill">
+                <%= link_to vinyl_tag_path(vinyl_tag), method: :delete, class: "text-dark text-decoration-none font-weight-bold" do %>
                   <%= vinyl_tag.tag.title %>
                 <% end %>
               </div>
