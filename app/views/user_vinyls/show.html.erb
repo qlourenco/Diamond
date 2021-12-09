@@ -42,7 +42,7 @@
             <% @vinyl_tags.each do |vinyl_tag| %>
               <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill">
                 <%= link_to vinyl_tag_path(vinyl_tag), method: :delete, class: "text-dark text-decoration-none font-weight-bold" do %>
-                  <%= vinyl_tag.tag.title %>
+                  <%= "X #{vinyl_tag.tag.title}" %>
                 <% end %>
               </div>
             <% end %>
