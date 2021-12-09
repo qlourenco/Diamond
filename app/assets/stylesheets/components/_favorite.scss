@@ -5,3 +5,33 @@
 .add-favorite-link{
   color: gray;
 }
+
+#lozenge-green {
+  position: relative;
+  float: right;
+  top: 0px;
+  right: 10px;
+  background-color: $main-green;
+  width: 40px;
+  height: 60px;
+  border-radius: 0 0 15px 15px;
+  filter: drop-shadow(2px 0.5px 0px #D0B564);
+}
+
+#lozenge-gold {
+  position: relative;
+  float: right;
+  top: 0px;
+  background-color: $mid-gold;
+  right: 10px;
+  width: 40px;
+  height: 60px;
+  border-radius: 0 0 15px 15px;
+  filter: drop-shadow(2px 0.5px 0px rgba(45, 66, 67, 0.95));
+}
+
+.diamond-fav {
+  position: absolute;
+  top: 0px;
+  right: -9px;
+}

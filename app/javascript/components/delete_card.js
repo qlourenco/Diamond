@@ -1,7 +1,10 @@
 const delete_card = () => {
-  const cards = document.querySelectorAll(".card-search")
+  const cards = document.querySelectorAll(".card-search"  )
   cards.forEach((card) => {
     const trashBtn = card.querySelector(".my-trash")
+    if (trashBtn == null) {
+      return
+    }
     trashBtn.addEventListener("click", () => {
       card.classList.add('translate-card')
       setTimeout(() => {

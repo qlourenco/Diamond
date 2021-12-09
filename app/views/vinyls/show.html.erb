@@ -1,15 +1,10 @@
 <div style="height: 100vh">
   <div class="banner-vinyl" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.8239670868347339) 0%, rgba(253,187,45,0) 25%), url('<%= @vinyl.cover_url %>');">
-    <div class="d-flex flex-row-reverse py-3 px-2">
-      <% if @already_in_collec %>
-      <% else %>
-        <% if @favorite %>
-          <%= render 'shared/delete-favorite-link' %>
-        <% else %>
-          <%= render 'shared/add-favorite-link' %>
-        <% end %>
-      <% end %>
-    </div>
+    <% if @favorite %>
+      <%= render 'shared/delete-favorite-link' %>
+    <% else %>
+      <%= render 'shared/add-favorite-link' %>
+    <% end %>
   </div>
   <div class="infos bg-light mb-4">
     <div class="d-flex justify-content-between align-items-center">
@@ -30,9 +25,4 @@
   <div class="vinyl-image">
         <%= image_tag 'vinyl.png' %>
   </div>
-
-
-
-
-
 </div>
