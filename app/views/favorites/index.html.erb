@@ -31,7 +31,7 @@
   <div class="m-3 content-search" style="padding-bottom : 45px;">
     <% @favorites.reverse_each do |favorite| %>
 
-      <div class="d-flex card-search py-4 g-0">
+      <div class="d-flex card-search py-4 g-0" id="<%= favorite.vinyl.id %>">
         <%= link_to favorite_path(favorite), style: "width:280px" do %>
           <div class="container-img">
             <img class="photo-sizing" src="<%= favorite.vinyl.cover_url %>">

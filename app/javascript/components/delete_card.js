@@ -1,14 +1,20 @@
 const delete_card = () => {
-  const delete_icon = document.querySelector('.my-trash')
-  const card = document.querySelector('.card-search')
-  // console.log(card)
-  // console.log(delete_icon)
-  delete_icon.addEventListener('click', remove_card_search)
+  const cards = document.querySelectorAll(".card-search")
+  cards.forEach((card) => {
+    const trashBtn = card.querySelector(".my-trash")
+    trashBtn.addEventListener("click", () => {
+      card.classList.add('translate-card')
+      setTimeout(() => {
+        card.classList.add('space-card')
+        card.classList.remove('py-4')
+      }, 200)
 
-  const remove_card_search = () => {
-    card.remove()
-  }
-};
+      setTimeout(() => {
+        card.remove();
+      }, 300)
+    })
+  })
 
+}
 
 export { delete_card };
