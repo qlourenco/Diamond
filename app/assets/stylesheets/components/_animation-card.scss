@@ -1,11 +1,8 @@
 .translate-card{
-  transition: .5s;
-  transform: translate(-500px) !important;
-  animation-fill-mode: forwards;
+  transition: .4s;
+  transform: translate(-400px) !important;
 }
 
 .space-card{
-  height: 0;
-  transition: .1s;
-  animation: ease-in-out;
+  transition: padding 1s ease-in-out;
 }

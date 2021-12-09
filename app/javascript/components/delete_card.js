@@ -7,11 +7,12 @@ const delete_card = () => {
       setTimeout(() => {
         card.classList.add('space-card')
         card.classList.remove('py-4')
-      }, 200)
+        card.style.height = '0px'
+      }, 500)
 
       setTimeout(() => {
         card.remove();
-      }, 300)
+      }, 5000)
     })
   })
 

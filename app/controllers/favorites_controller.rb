@@ -30,8 +30,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
-    @favorite.destroy
-    head :no_content
+    # @favorite = Favorite.find(params[:id])
+    # @favorite.destroy
+    # head :no_content
   end
 end
