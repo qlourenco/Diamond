@@ -17,13 +17,13 @@
 
 <div class="music-kind-view">
     <% if @third_genre %>
-      <% genre_first = Genre.find(@first_genre[0]) %>
-      <% genre_second = Genre.find(@second_genre[0]) %>
-      <% genre_third = Genre.find(@third_genre[0]) %>
+      <% genre_first = Genre.find(@hash_top_vinyl[0][0]) %>
+      <% genre_second = Genre.find(@hash_top_vinyl[1][0]) %>
+      <% genre_third = Genre.find(@hash_top_vinyl[2][0]) %>
       <div class="d-flex align-items-end">
-        <div class="count text-center p-1" style="min-width: 50px; height: 50px;"><p><%= genre_second.name %></p><div class="counter font-weight-bold"><%= @second_genre.count  %></div></div>
-        <div class="count text-center p-1" style="min-width: 50px; height: 75px;"><p><%= genre_first.name %></p><div class="counter"><%= @first_genre.count  %></div></div>
-        <div class="count text-center p-1" style="min-width: 50px; height: 25px;"><p><%= genre_third.name %></p><div class="counter"><%= @third_genre.count  %></div></div>
+        <div class="count text-center p-1" style="min-width: 50px; height: 50px;"><p><%= genre_second.name %></p><div class="counter font-weight-bold"><%= @hash_top_vinyl[1][1].count  %></div></div>
+        <div class="count text-center p-1" style="min-width: 50px; height: 75px;"><p><%= genre_first.name %></p><div class="counter"><%= @hash_top_vinyl[0][1].count  %></div></div>
+        <div class="count text-center p-1" style="min-width: 50px; height: 25px;"><p><%= genre_third.name %></p><div class="counter"><%= @hash_top_vinyl[2][1].count  %></div></div>
       </div>
     <% end %>
 </div>
