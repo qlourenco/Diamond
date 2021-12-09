@@ -6,12 +6,14 @@
 
 
   <%= link_to back_arrow, _back_url %>
-  <div id="add-button" class="circle-btn-scan">
   <% if @already_in_collec %>
+  <div class="circle-btn-scan">
     <%= link_to check, user_vinyls_path(@vinyl) %>
-  <% else %>
-    <%= link_to plus, vinyl_user_vinyls_path(@vinyl), method: :post %>
-  <% end %>
   </div>
+  <% else %>
+  <div id="add-button" class="circle-btn-scan">
+    <%= link_to plus, vinyl_user_vinyls_path(@vinyl), method: :post %>
+  </div>
+  <% end %>
   <%= link_to collection, user_vinyls_path %>
 </div>
