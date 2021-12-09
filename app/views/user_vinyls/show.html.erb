@@ -13,7 +13,7 @@
     <div class="class-tag-with" style="background-color: #2D4243;">
       <div class="card-tag">
         <div class="top-tag">
-          <h2 class="text-center my-3">Choose your tag:</h2>
+          <h2 class="text-center my-3">Choose your tag</h2>
           <%= simple_form_for @user_vinyl do |f| %>
           <div class="d-flex justify-content-center align-items-center">
             <%= f.input :vinyl_tags, collection: @tags, class:"form-control", label: false %>
@@ -36,7 +36,7 @@
 
         <div class="bottom-tag my-3">
           <div class="my-tag text-center my-3">
-            <h2>My tags:</h2>
+            <h2>My tags</h2>
           </div>
           <div class="d-flex flex-wrap mt-3">
             <% @vinyl_tags.each do |vinyl_tag| %>
