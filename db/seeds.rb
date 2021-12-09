@@ -17,12 +17,12 @@ puts "Creating seeds ..."
 puts "[USERS] ..."
 User.create(email: "emile@gmail.com", first_name: "Emile", last_name: "Berliner", password: "secret")
 
-# puts "[GENRES] ..."
-# rock = Genre.create(name: "Rock")
-# jazz = Genre.create(name: "Jazz")
-# hip_hop = Genre.create(name: "Hip-hop")
-# electronic = Genre.create(name: "Electronic")
-# pop = Genre.create(name: "Pop")
+puts "[GENRES] ..."
+rock = Genre.create(name: "Rock")
+jazz = Genre.create(name: "Jazz")
+hip_hop = Genre.create(name: "Hip-hop")
+electronic = Genre.create(name: "Electronic")
+pop = Genre.create(name: "Pop")
 
 # puts "[ARTISTS] ..."
 # eminem = Artist.create(name: "Eminem")
