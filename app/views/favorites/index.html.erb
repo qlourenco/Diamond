@@ -18,7 +18,7 @@
   <div class="ml-3 mr-3 mb-3 content-search" style="padding-bottom : 45px;">
     <% @favorites.reverse_each do |favorite| %>
 
-      <div class="d-flex card-search py-4 g-0">
+      <div class="d-flex card-search py-4 g-0" id="<%= favorite.vinyl.id %>">
         <%= link_to favorite_path(favorite), style: "width:280px" do %>
           <div class="container-img">
             <img class="photo-sizing" src="<%= favorite.vinyl.cover_url %>">
@@ -33,7 +33,7 @@
         <% end %>
           <div class="h-75 pr-3 pl-3 pb-3 pt-2 link-card justify-content-between align-items-center d-flex flex-column">
             <%= link_to icon('fas', 'plus'), create_from_favorite_favorite_path(favorite), method: :post %>
-            <%= link_to icon('fas', 'trash-alt'), favorite_path(favorite), method: :delete, remote: true, class:"my-trash text-white" %>
+            <%= link_to icon('fas', 'trash-alt'), favorite_path(favorite), method: :delete, remote: true, class:"my-trash text-white", id:'trash' %>
           </div>
       </div>
 

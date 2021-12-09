@@ -50,7 +50,7 @@ class UserVinylsController < ApplicationController
   def destroy
     @user_vinyl = UserVinyl.find(params[:id])
     @user_vinyl.destroy
-    redirect_to user_vinyls_path
+    head :no_content
   end
 
   private
