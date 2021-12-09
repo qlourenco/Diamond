@@ -24,11 +24,6 @@
         <%= link_to vinyl_path(vinyl) do %>
           <div class="container-img ">
             <img class="photo-sizing position-relative" src="<%= vinyl.cover_url %>">
-            <% if @already_in_collecs[index] %>
-              <%= render 'shared/bookmark-green' %>
-            <% else %>
-              <%= render 'shared/bookmark-red' %>
-            <% end %>
           </div>
 
           <div class="container-infos w-50 px-3 py-2 d-flex flex-column justify-content-between">
@@ -40,10 +35,7 @@
           </div>
           <div class="h-75 p-3 link-card justify-content-between align-items-center d-flex flex-column">
             <div>
-              <% if @already_in_collecs[index] %>
-              <% else %>
-                <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(vinyl), method: :post %>
-              <% end %>
+              <%= link_to icon('fas', 'plus'), vinyl_user_vinyls_path(vinyl), method: :post %>
             </div>
           </div>
         <% end %>
