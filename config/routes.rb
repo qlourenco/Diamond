@@ -13,18 +13,17 @@ Rails.application.routes.draw do
   end
 
   # The vinyls that the user own in his collection:
-  resources :user_vinyls, only: [:index, :show, :update, :destroy]
+  resources :user_vinyls, only: [:index, :show, :update, :destroy] do
+    member do
+      patch :update_tag
+    end
+  end
   # TODO: :
   # -- SHOULD HAVE --
   # :users
   # :listen
   # :index from other users
 
-  # resources :visitors
-
-  # resources :products do
-  #   get :get_barcode, on: :collection
-  # end
   # The vinyls that the user has put in his wish list:
   resources :favorites, only: [:index, :show, :destroy] do
     member do

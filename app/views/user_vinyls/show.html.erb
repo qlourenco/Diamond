@@ -16,18 +16,18 @@
           <h2 class="text-center my-3">Choose your tag:</h2>
           <%= simple_form_for @user_vinyl do |f| %>
           <div class="d-flex justify-content-center align-items-center">
-            <%= f.input :vinyl_tags, collection: @tags, class:"form-control", label: false,:input_html => {:maxlength =>2} %>
+            <%= f.input :vinyl_tags, collection: @tags, class:"form-control", label: false %>
             <%= f.submit "add tag", class: "btn btn-primary font-weight-bold mb-3" %>
           </div>
           <% end %>
 
           <div class="tag-suggest">
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(4).title %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(33).title %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(22).title %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(14).title %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(7).title %></div>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= @tags.find(34).title %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(4).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(4)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(33).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(33)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(22).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(22)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(14).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(14)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(7).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(7)), method: :patch %></div>
+            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark"><%= link_to @tags.find(34).title, update_tag_user_vinyl_path(@user_vinyl, @tags.find(34)), method: :patch %></div>
           </div>
         </div>
 
@@ -35,13 +35,18 @@
         </div>
 
         <div class="bottom-tag my-3">
-          <% @vinyl_tags.each do |vinyl_tag| %>
-            <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark">
-              <%= link_to vinyl_tag_path(vinyl_tag), method: :delete do %>
-                <%= vinyl_tag.tag.title %>
-              <% end %>
-            </div>
-          <% end %>
+          <div class="my-tag text-center my-3">
+            <h2>My tags:</h2>
+          </div>
+          <div class="d-flex mt-3">
+            <% @vinyl_tags.each do |vinyl_tag| %>
+              <div class="bg-white ml-2 mb-2 py-2 px-3 rounded-pill text-dark">
+                <%= link_to vinyl_tag_path(vinyl_tag), method: :delete do %>
+                  <%= vinyl_tag.tag.title %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
         <i id="buttonTagClose" class="fas fa-times-circle position-absolute"></i>
       </div>
@@ -50,7 +55,7 @@
 </div>
   <div class="infos bg-light mb-4" style="height: 42vh">
     <div class="d-flex justify-content-between align-items-center">
-      <h2 class="text-primary"><%= @user_vinyl.vinyl.title %></h2>
+      <h2 class="text-primary title-sizing"><%= @user_vinyl.vinyl.title %></h2>
       <small id="rate" class="d-flex align-items-baseline"><%= image_tag 'rating.svg', class:"mr-1" %><strong><%= @user_vinyl.vinyl.stars %></strong></small>
     </div>
     <div class="artist-year">
