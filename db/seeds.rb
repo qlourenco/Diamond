@@ -1,21 +1,21 @@
 # require 'open-uri'
 # require 'json'
 
-puts "/!\\ DESTROYING EVERYTHING /!\\ "
-VinylTag.destroy_all
-UserVinyl.destroy_all
-Track.destroy_all
-Tag.destroy_all
-Favorite.destroy_all
-Vinyl.destroy_all
-Artist.destroy_all
-Genre.destroy_all
-User.destroy_all
+# puts "/!\\ DESTROYING EVERYTHING /!\\ "
+# VinylTag.destroy_all
+# UserVinyl.destroy_all
+# Track.destroy_all
+# Tag.destroy_all
+# Favorite.destroy_all
+# Vinyl.destroy_all
+# Artist.destroy_all
+# Genre.destroy_all
+# User.destroy_all
 
-puts "Creating seeds ..."
+# puts "Creating seeds ..."
 
-puts "[USERS] ..."
-User.create(email: "emile@gmail.com", first_name: "Emile", last_name: "Berliner", password: "secret")
+# puts "[USERS] ..."
+# emile = User.create(email: "emile@gmail.com", first_name: "Emile", last_name: "Berliner", password: "secret")
 
 # puts "[GENRES] ..."
 # rock = Genre.create(name: "Rock")
@@ -156,8 +156,8 @@ User.create(email: "emile@gmail.com", first_name: "Emile", last_name: "Berliner"
 # Favorite.create(user: emile, vinyl: it_was_written)
 # Favorite.create(user: emile, vinyl: ego_trip)
 
-puts "[TAGS] ..."
-TAGS = ["1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020", "Summer", "Winter", "Spring", "Autumn", "Favorites", "Travel", "Bad mood", "Happy", "Dance", "Sing", "Beats", "Live", "Rave", "Cool", "French", "German", "Hispanic", "English", "US", "Russian", "Oriental", "Asian", "African", "European", "American", "Chill", "Nostalgia", "Childhood", "Rain", "Training", "Studying"].sort
+# puts "[TAGS] ..."
+# TAGS = ["1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020", "Summer", "Winter", "Spring", "Autumn", "Favorites", "Travel", "Bad mood", "Happy", "Dance", "Sing", "Beats", "Live", "Rave", "Cool", "French", "German", "Hispanic", "English", "US", "Russian", "Oriental", "Asian", "African", "European", "American", "Chill", "Nostalgia", "Childhood", "Rain", "Training", "Studying"].sort
 
 # puts "[TRACKS] ..."
 # # TODO: Tracks + add in Vinyl
@@ -221,11 +221,11 @@ TAGS = ["1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020", "Summer"
 # UserVinyl.create(user: emile, vinyl: endless_smile)
 # UserVinyl.create(user: emile, vinyl: l_autre)
 
-puts "[VINYL TAGS] ..."
-# TODO: Add tags on UserVinyl
-TAGS.each do |tag|
-  Tag.create(title: tag)
-end
+# puts "[VINYL TAGS] ..."
+# # TODO: Add tags on UserVinyl
+# TAGS.each do |tag|
+#   Tag.create(title: tag)
+# end
 
 # VinylTag.create(tag: Tag.all[8], user_vinyl: UserVinyl.find(8))
 # VinylTag.create(tag: Tag.all[3], user_vinyl: UserVinyl.find(8))
