@@ -42,7 +42,6 @@ class UserVinylsController < ApplicationController
   end
 
   def update
-    # binding.pry
     @user_vinyl = UserVinyl.find(params[:id])
     @tag = Tag.find(params[:user_vinyl][:vinyl_tags])
     @vinyl_tag = VinylTag.create(tag: @tag, user_vinyl: @user_vinyl)
