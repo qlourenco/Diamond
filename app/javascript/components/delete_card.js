@@ -15,7 +15,7 @@ const delete_card = () => {
 
       setTimeout(() => {
         card.remove();
-      }, 5000)
+      }, 2000)
     })
   })
 

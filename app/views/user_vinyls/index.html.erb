@@ -28,9 +28,9 @@
     <% end %>
 </div>
 
-<div class="card-vinyl">
+<div class="card-vinyl overflow-hidden">
   <div class="search-bar">
-    <%= form_tag user_vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center z-index-10" do %>
+    <%= form_tag user_vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center" do %>
       <%= text_field_tag :query,
           params[:query],
           required: false,

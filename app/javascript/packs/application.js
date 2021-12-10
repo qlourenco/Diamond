@@ -45,4 +45,3 @@ document.addEventListener('turbolinks:load', () => {
   loaderSearch();
   delete_card();
 });
-
