@@ -157,7 +157,6 @@
 # Favorite.create(user: emile, vinyl: ego_trip)
 
 
-
 # puts "[TAGS] ..."
 # TAGS = ["1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020", "Summer", "Winter", "Spring", "Autumn", "Favorites", "Travel", "Bad mood", "Happy", "Dance", "Sing", "Beats", "Live", "Rave", "Cool", "French", "German", "Hispanic", "English", "US", "Russian", "Oriental", "Asian", "African", "European", "American", "Chill", "Nostalgia", "Childhood", "Rain", "Training", "Studying"].sort
 
