@@ -155,7 +155,6 @@
 # Favorite.create(user: emile, vinyl: the_now_now)
 # Favorite.create(user: emile, vinyl: it_was_written)
 # Favorite.create(user: emile, vinyl: ego_trip)
-=======
 
 
 # puts "[TAGS] ..."
